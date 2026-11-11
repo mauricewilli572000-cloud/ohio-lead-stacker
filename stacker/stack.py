@@ -9,6 +9,7 @@ WEIGHTS = {
     "foreclosure": 30,
     "probate": 30,
     "tax_delinquent": 25,
+    "divorce": 25,
     "code_violation": 20,
     "eviction": 15,
 }
@@ -18,9 +19,10 @@ LABELS = {
     "tax_delinquent": "Tax delinquent",
     "code_violation": "Code violation",
     "eviction": "Eviction",
+    "divorce": "Divorce",
 }
 # Which source's owner/mailing to trust first. Auditor-enriched sources first.
-OWNER_PRIORITY = ["probate", "code_violation", "tax_delinquent", "foreclosure", "eviction"]
+OWNER_PRIORITY = ["probate", "code_violation", "tax_delinquent", "divorce", "foreclosure", "eviction"]
 
 
 class _UF:

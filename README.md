@@ -1,7 +1,7 @@
 # Ohio Lead Stacker
 
 Finds properties that show up on **two or more** of your lead lists (foreclosure,
-probate, tax delinquent, code violation, eviction) and ranks them.
+probate, tax delinquent, code violation, eviction, divorce) and ranks them.
 
 ## How the data stays separated
 

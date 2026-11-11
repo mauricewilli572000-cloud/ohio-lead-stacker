@@ -66,6 +66,7 @@
   .t-tax_delinquent { color: #e0bd7a; border-color: #6b5426; }
   .t-code_violation { color: #9cc7e0; border-color: #2f5166; }
   .t-eviction { color: #a8d1a0; border-color: #36552f; }
+  .t-divorce { color: #f0a3b5; border-color: #6b3341; }
   .tier { font-size: .72rem; color: var(--gold); text-transform: uppercase; letter-spacing: .06em; }
   .warn { color: var(--bad-fg); font-size: .75rem; }
   .dim { color: var(--ink-dim); }
@@ -90,7 +91,7 @@
   <nav class="top"><a href="https://mauricewilli572000-cloud.github.io/franklin-foreclosure-scraper/">&larr; All dashboards</a></nav>
   <header>
     <h1>Stacked Leads</h1>
-    <p class="tagline">Properties that show up on two or more of your lists: foreclosure, probate, tax delinquent, code violation, eviction. Matched by parcel ID or street address.</p>
+    <p class="tagline">Properties that show up on two or more of your lists: foreclosure, probate, tax delinquent, code violation, eviction, divorce. Matched by parcel ID or street address.</p>
   </header>
   <p class="stats" id="stats">Loading…</p>
   <details class="sources"><summary>Sources in this run</summary><table id="sources"></table></details>
@@ -124,7 +125,7 @@
 
 <script>
 const LABELS = { foreclosure: 'Foreclosure', probate: 'Probate', tax_delinquent: 'Tax delinquent',
-                 code_violation: 'Code violation', eviction: 'Eviction' };
+                 code_violation: 'Code violation', eviction: 'Eviction', divorce: 'Divorce' };
 const esc = s => (s ?? '').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const title = s => (s || '').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
 const chip = t => `<span class="chip t-${esc(t)}">${esc(LABELS[t] || t)}</span>`;

@@ -197,6 +197,22 @@ def tax_delinquent(records, src):
             detail=" · ".join(bits), url=r.get("auditor_url"))
 
 
+# --- divorce -----------------------------------------------------------
+
+def divorce(records, src):
+    """Divorce / dissolution cases matched to homes a spouse owns (one signal per property)."""
+    for r in records:
+        names = " & ".join(sp.get("name", "") for sp in r.get("spouses") or [])
+        for i, p in enumerate(r.get("properties") or []):
+            yield make_signal(
+                src, record_id=f"{r.get('case_number')}:{i}", address=p.get("address"),
+                parcel=p.get("parcel"), city=p.get("city"), zip_=p.get("zip"),
+                owner=p.get("owner_name"), mailing=p.get("mailing_address"),
+                contact_name=names, date=r.get("filed_date"),
+                detail=f"{r.get('case_label', 'Divorce')} · {p.get('match', '')}",
+                url=r.get("case_url"))
+
+
 ADAPTERS = {
     "franklin_foreclosure": franklin_foreclosure,
     "clerk_foreclosure": clerk_foreclosure,
@@ -206,4 +222,5 @@ ADAPTERS = {
     "probate": probate,
     "tax_delinquent": tax_delinquent,
     "hamilton_tax": tax_delinquent,   # old name
+    "divorce": divorce,
 }

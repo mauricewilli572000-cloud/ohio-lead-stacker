@@ -136,6 +136,15 @@
    "repo": "summit-tax-delinquent-leads",
    "path": "docs/summit_tax_delinquent.json",
    "adapter": "tax_delinquent"
+  },
+  {
+   "id": "hamilton-divorce",
+   "label": "Hamilton divorce",
+   "lead_type": "divorce",
+   "county": "hamilton",
+   "repo": "hamilton-divorce-leads",
+   "path": "docs/hamilton_divorce.json",
+   "adapter": "divorce"
   }
  ]
 }

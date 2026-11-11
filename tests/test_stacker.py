@@ -80,3 +80,17 @@ def test_single_list_properties_are_not_stacked():
         make_signal(_src("code_violation"), record_id=2, address="9 PINE ST", zip_="43215"),
     ]
     assert build_stacks(sigs, date(2026, 11, 10)) == []
+
+
+def test_divorce_adapter():
+    from stacker.adapters import ADAPTERS
+    src = {"id": "hamilton-divorce", "label": "Hamilton divorce", "lead_type": "divorce", "county": "hamilton"}
+    rec = {"case_number": "DR2601559", "case_label": "Dissolution", "filed_date": "2026-11-10",
+           "case_url": "https://x", "spouses": [{"name": "Kenneth Easterling"}, {"name": "Ellen Isaac"}],
+           "properties": [{"address": "4512 RAVENWOOD CT", "parcel": "0010001000100", "city": "Cincinnati",
+                           "zip": "45244", "owner_name": "EASTERLING KENNETH C", "mailing_address": "",
+                           "match": "home at spouse's address"}]}
+    sigs = list(ADAPTERS["divorce"]([rec], src))
+    assert len(sigs) == 1 and sigs[0]["lead_type"] == "divorce"
+    assert sigs[0]["address_key"] and sigs[0]["date"] == "2026-11-10"
+    assert "Kenneth Easterling" in sigs[0]["contact_name"]
