@@ -20,6 +20,7 @@ def test_address_forms_match():
     assert normalize_address("3355 E FIFTH AVE") == normalize_address("3355 East 5th Avenue")
     assert normalize_address("1109 E 97TH ST") == normalize_address("1109 E 97 ST")
     assert normalize_address("27 S BURGESS AVE INCLUDING 25D AND 29") == "27 S BURGESS AVE"
+    assert normalize_address("872 - 874 SUMMIT ST") == normalize_address("872 Summit St")
 
 
 def test_unmatchable_addresses():

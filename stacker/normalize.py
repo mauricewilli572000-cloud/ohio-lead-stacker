@@ -56,6 +56,7 @@ def normalize_address(raw):
     s = str(raw).upper()
     s = re.split(r"\bINCLUDING\b|\bAND\s+\d", s)[0]   # '27 S BURGESS AVE INCLUDING 25D ...'
     s = s.split(",")[0]
+    s = re.sub(r"^\s*(\d+)\s*-\s*\d+\b", r"\1", s)   # '872 - 874 SUMMIT ST' -> '872 SUMMIT ST'
     s = s.replace(".", " ").replace("'", "")
     s = re.sub(r"\s+", " ", " " + s).rstrip()
     s = UNIT_RE.sub("", s)

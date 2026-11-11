@@ -169,22 +169,30 @@ def probate(records, src):
 
 # --- tax delinquent ----------------------------------------------------
 
-def hamilton_tax(records, src):
+def tax_delinquent(records, src):
+    """Shared shape of the Hamilton, Franklin and Summit tax delinquent scrapers.
+
+    No date is passed: the scrapers only know when they first saw a parcel, which
+    would wrongly count as recent activity. The amount and certified year go in the detail.
+    """
     for r in records:
         if (r.get("status") or "active") != "active":
             continue
         amt = r.get("delinquent_amount") or r.get("amount_owed")
         yrs = r.get("advertised_years") or []
+        bits = [f"${amt:,.0f} delinquent" if isinstance(amt, (int, float)) else "Delinquent"]
+        if r.get("tax_year"):
+            bits.append(f"since {r['tax_year']}")
+        if yrs:
+            bits.append(f"advertised {', '.join(yrs)}")
         yield make_signal(
             src, record_id=r.get("doc_num"), address=r.get("property_address"),
             parcel=r.get("doc_num"), city=r.get("property_city"),
             zip_=r.get("property_zip"), owner=r.get("owner_name"),
             mailing=_mailing(r.get("mailing_address"), r.get("mailing_city"),
                              r.get("mailing_state"), r.get("mailing_zip")),
-            date=r.get("date_added"), amount=amt,
-            detail=(f"Delinquent since {r['tax_year']}" if r.get("tax_year") else "Delinquent")
-                   + (f" · advertised {', '.join(yrs)}" if yrs else ""),
-            url=r.get("auditor_url"))
+            phone=r.get("owner_phone", ""), amount=amt,
+            detail=" · ".join(bits), url=r.get("auditor_url"))
 
 
 ADAPTERS = {
@@ -194,5 +202,6 @@ ADAPTERS = {
     "cleveland_code": cleveland_code,
     "franklin_evictions": franklin_evictions,
     "probate": probate,
-    "hamilton_tax": hamilton_tax,
+    "tax_delinquent": tax_delinquent,
+    "hamilton_tax": tax_delinquent,   # old name
 }
