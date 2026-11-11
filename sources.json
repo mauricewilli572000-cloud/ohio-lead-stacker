@@ -75,6 +75,15 @@
    "adapter": "franklin_evictions"
   },
   {
+   "id": "hamilton-evictions",
+   "label": "Hamilton evictions",
+   "lead_type": "eviction",
+   "county": "hamilton",
+   "repo": "hamilton-eviction-leads",
+   "path": "docs/hamilton_evictions.json",
+   "adapter": "franklin_evictions"
+  },
+  {
    "id": "franklin-probate",
    "label": "Franklin probate",
    "lead_type": "probate",
