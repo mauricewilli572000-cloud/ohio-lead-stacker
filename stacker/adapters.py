@@ -108,13 +108,14 @@ def columbus_code(records, src):
 
 
 def cleveland_code(records, src):
+    """Cleveland and Cincinnati code enforcement (same lead layout)."""
     for r in records:
         if not (r.get("open_records") or 0):
             continue
         types = r.get("lead_types") or []
         yield make_signal(
             src, record_id=r.get("lead_id"), address=r.get("property_address"),
-            parcel=r.get("parcel"), city=r.get("city") or "Cleveland",
+            parcel=r.get("parcel"), city=r.get("city") or src["label"].split()[0],
             zip_=r.get("zip"), owner=r.get("owner_name"),
             mailing=r.get("mailing_address") or "", date=r.get("latest_date"),
             amount=r.get("total_fines"),

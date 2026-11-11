@@ -48,6 +48,15 @@
    "adapter": "cleveland_code"
   },
   {
+   "id": "cincinnati-code",
+   "label": "Cincinnati code enforcement",
+   "lead_type": "code_violation",
+   "county": "hamilton",
+   "repo": "cincinnati-code-enforcement",
+   "path": "docs/cincinnati_code_enforcement.json",
+   "adapter": "cleveland_code"
+  },
+  {
    "id": "franklin-evictions",
    "label": "Franklin evictions",
    "lead_type": "eviction",

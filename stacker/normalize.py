@@ -103,6 +103,9 @@ def normalize_parcel(raw, county):
             d = d[:9]
         if len(d) != 9:
             return None
+    elif county == "hamilton":
+        # Auditor/CAGIS IDs differ only by leading zeros ('0179007403310' vs '1790074033100').
+        d = d.lstrip("0")
     elif county == "cuyahoga":
         if len(d) == 7:
             d = "0" + d

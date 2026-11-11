@@ -38,6 +38,7 @@ def test_parcels():
     assert normalize_parcel("010-075397", "franklin") == "010075397"
     assert normalize_parcel("762-02-090", "cuyahoga") == normalize_parcel("76202090", "cuyahoga")
     assert normalize_parcel("000-000000", "franklin") is None
+    assert normalize_parcel("01790074033100", "hamilton") == normalize_parcel("179-0074-0331-00", "hamilton")
 
 
 def test_dates():
