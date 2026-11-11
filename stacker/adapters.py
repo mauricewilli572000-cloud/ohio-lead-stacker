@@ -125,6 +125,7 @@ def cleveland_code(records, src):
 # --- evictions (one signal per rental property of the landlord) -------
 
 def franklin_evictions(records, src):
+    """Franklin and Cleveland eviction leads (one record per landlord, with their properties)."""
     for r in records:
         mailing = _mailing(r.get("mailing_street"), r.get("mailing_city"),
                            r.get("mailing_state"), r.get("mailing_zip"))
