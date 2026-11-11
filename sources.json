@@ -1,0 +1,30 @@
+{
+  "owner": "mauricewilli572000-cloud",
+  "branch": "main",
+  "sources": [
+    {"id": "franklin-foreclosure", "label": "Franklin foreclosure", "lead_type": "foreclosure", "county": "franklin",
+     "repo": "franklin-foreclosure-scraper", "path": "dashboard/records.json", "adapter": "franklin_foreclosure"},
+    {"id": "cuyahoga-foreclosure", "label": "Cuyahoga foreclosure", "lead_type": "foreclosure", "county": "cuyahoga",
+     "repo": "franklin-foreclosure-scraper", "path": "dashboard/cuyahoga.json", "adapter": "clerk_foreclosure"},
+    {"id": "summit-foreclosure", "label": "Summit foreclosure", "lead_type": "foreclosure", "county": "summit",
+     "repo": "summit-county-leads", "path": "dashboard/summit.json", "adapter": "clerk_foreclosure"},
+
+    {"id": "columbus-code", "label": "Columbus code enforcement", "lead_type": "code_violation", "county": "franklin",
+     "repo": "columbus-code-enforcement", "path": "docs/code_enforcement.json", "adapter": "columbus_code"},
+    {"id": "cleveland-code", "label": "Cleveland code enforcement", "lead_type": "code_violation", "county": "cuyahoga",
+     "repo": "cleveland-code-enforcement", "path": "docs/cleveland_code_enforcement.json", "adapter": "cleveland_code"},
+
+    {"id": "franklin-evictions", "label": "Franklin evictions", "lead_type": "eviction", "county": "franklin",
+     "repo": "franklin-eviction-leads", "path": "dashboard/evictions.json", "adapter": "franklin_evictions"},
+
+    {"id": "franklin-probate", "label": "Franklin probate", "lead_type": "probate", "county": "franklin",
+     "repo": "franklin-probate-scraper", "path": "docs/data/franklin/records.json", "adapter": "probate"},
+    {"id": "cuyahoga-probate", "label": "Cuyahoga probate", "lead_type": "probate", "county": "cuyahoga",
+     "repo": "franklin-probate-scraper", "path": "docs/data/cuyahoga/records.json", "adapter": "probate"},
+    {"id": "summit-probate", "label": "Summit probate", "lead_type": "probate", "county": "summit",
+     "repo": "franklin-probate-scraper", "path": "docs/data/summit/records.json", "adapter": "probate"},
+
+    {"id": "hamilton-tax", "label": "Hamilton tax delinquent", "lead_type": "tax_delinquent", "county": "hamilton",
+     "repo": "hamilton-tax-delinquent-leads", "path": "docs/hamilton_tax_delinquent.json", "adapter": "hamilton_tax"}
+  ]
+}

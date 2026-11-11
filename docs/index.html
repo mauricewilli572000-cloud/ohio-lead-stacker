@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stacked Leads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #17140f; --panel: #201b14; --panel-2: #2a2419; --border: #3d3625;
+    --ink: #efe8d8; --ink-dim: #a99c81; --ink-faint: #766a53;
+    --gold: #c9a24b; --gold-dim: #8a6f38;
+    --good-bg: #21301f; --good-fg: #a8d1a0;
+    --warn-bg: #362b12; --warn-fg: #e0bd7a;
+    --bad-bg: #331c17;  --bad-fg: #e0a89c;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 14px; line-height: 1.5; }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 2.5rem 1.75rem 5rem; }
+  nav.top { margin-bottom: 1.2rem; font-size: .85rem; }
+  nav.top a { color: var(--gold); text-decoration: none; }
+  header h1 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600;
+    font-size: 1.9rem; margin: 0 0 .3rem; letter-spacing: -0.01em; }
+  header p.tagline { color: var(--ink-dim); margin: 0 0 1.1rem; max-width: 70ch; }
+  .stats { color: var(--ink-dim); font-size: .88rem; margin: 0 0 1rem; }
+  .stats strong { color: var(--ink); font-weight: 600; }
+  .stats a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+  details.sources { margin: 0 0 1.6rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--border);
+    color: var(--ink-dim); font-size: .82rem; }
+  details.sources summary { cursor: pointer; color: var(--ink-faint); }
+  details.sources table { margin-top: .6rem; width: auto; }
+  details.sources td { padding: .2rem 1.2rem .2rem 0; border: 0; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin-bottom: 1.2rem; }
+  .toolbar input[type="search"] { flex: 1 1 16rem; background: var(--panel); border: 1px solid var(--border);
+    color: var(--ink); padding: .55rem .8rem; border-radius: .35rem; font-size: .9rem; }
+  .toolbar input[type="search"]::placeholder { color: var(--ink-faint); }
+  .toolbar select { background: var(--panel); border: 1px solid var(--border); color: var(--ink);
+    padding: .55rem .7rem; border-radius: .35rem; font-size: .85rem; }
+  .toolbar label.check { display: flex; align-items: center; gap: .4rem; color: var(--ink-dim);
+    font-size: .85rem; white-space: nowrap; }
+  .toolbar label.check input { accent-color: var(--gold); }
+  .count { color: var(--ink-faint); font-size: .82rem; margin-left: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { position: sticky; top: 0; background: var(--panel-2); text-align: left; padding: .65rem .7rem;
+    font-weight: 500; color: var(--ink-dim); font-size: .78rem; border-bottom: 1px solid var(--border);
+    cursor: pointer; user-select: none; white-space: nowrap; }
+  thead th.sorted { color: var(--gold); }
+  tbody tr.row { cursor: pointer; }
+  tbody tr.row:hover td { background: var(--panel); }
+  td { padding: .6rem .7rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  td.num { font-family: 'IBM Plex Mono', monospace; white-space: nowrap; }
+  .score { display: inline-block; min-width: 2.4rem; text-align: center; padding: .1rem .4rem;
+    border-radius: .3rem; font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+  .s-high { background: var(--good-bg); color: var(--good-fg); }
+  .s-mid  { background: var(--warn-bg); color: var(--warn-fg); }
+  .s-low  { background: var(--panel-2); color: var(--ink-dim); }
+  .chip { display: inline-block; padding: .05rem .5rem; margin: 0 .25rem .25rem 0; border-radius: 1rem;
+    font-size: .75rem; border: 1px solid var(--border); white-space: nowrap; }
+  .t-foreclosure { color: #e0a89c; border-color: #6b3a30; }
+  .t-probate { color: #c3b1e1; border-color: #4c3f66; }
+  .t-tax_delinquent { color: #e0bd7a; border-color: #6b5426; }
+  .t-code_violation { color: #9cc7e0; border-color: #2f5166; }
+  .t-eviction { color: #a8d1a0; border-color: #36552f; }
+  .tier { font-size: .72rem; color: var(--gold); text-transform: uppercase; letter-spacing: .06em; }
+  .warn { color: var(--bad-fg); font-size: .75rem; }
+  .dim { color: var(--ink-dim); }
+  .faint { color: var(--ink-faint); font-size: .8rem; }
+  tr.detail td { background: var(--panel); padding: 1rem 1.2rem 1.2rem; }
+  .detail-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+  .sig { padding: .5rem 0; border-bottom: 1px dashed var(--border); }
+  .sig:last-child { border-bottom: 0; }
+  .sig a { color: var(--gold); text-decoration: none; font-size: .8rem; }
+  h3 { font-size: .78rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 500; margin: 0 0 .5rem; }
+  ul.reasons { margin: 0; padding-left: 1.1rem; color: var(--ink-dim); }
+  .empty { padding: 3rem; text-align: center; color: var(--ink-faint); }
+  @media (max-width: 800px) {
+    .hide-sm { display: none; }
+    .detail-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a href="https://mauricewilli572000-cloud.github.io/franklin-foreclosure-scraper/">&larr; All dashboards</a></nav>
+  <header>
+    <h1>Stacked Leads</h1>
+    <p class="tagline">Properties that show up on two or more of your lists: foreclosure, probate, tax delinquent, code violation, eviction. Matched by parcel ID or street address.</p>
+  </header>
+  <p class="stats" id="stats">Loading…</p>
+  <details class="sources"><summary>Sources in this run</summary><table id="sources"></table></details>
+
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="Search address, owner, parcel, case…">
+    <select id="county"><option value="">All counties</option></select>
+    <select id="type"><option value="">Any lead type</option></select>
+    <select id="tier">
+      <option value="">2+ lists</option>
+      <option value="Hot">3+ lists (Hot)</option>
+    </select>
+    <label class="check"><input type="checkbox" id="hideConflict"> Hide owner-name conflicts</label>
+    <label class="check"><input type="checkbox" id="newOnly"> Added in last 7 days</label>
+    <span class="count" id="count"></span>
+  </div>
+
+  <table>
+    <thead><tr>
+      <th data-k="score">Score</th>
+      <th data-k="address">Property</th>
+      <th data-k="type_count">Lists</th>
+      <th data-k="owner">Owner</th>
+      <th data-k="mailing" class="hide-sm">Mailing</th>
+      <th data-k="last_date">Last activity</th>
+      <th data-k="added_date" class="hide-sm">Added</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+
+<script>
+const LABELS = { foreclosure: 'Foreclosure', probate: 'Probate', tax_delinquent: 'Tax delinquent',
+                 code_violation: 'Code violation', eviction: 'Eviction' };
+const esc = s => (s ?? '').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const title = s => (s || '').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+const chip = t => `<span class="chip t-${esc(t)}">${esc(LABELS[t] || t)}</span>`;
+const money = n => (typeof n === 'number' && n > 0) ? '$' + Math.round(n).toLocaleString() : '';
+let DATA = [], sortKey = 'score', sortDir = -1, open = new Set();
+
+fetch('stacked.json', { cache: 'no-store' }).then(r => r.json()).then(d => {
+  DATA = d.stacks || [];
+  const when = new Date(d.generated_at);
+  document.getElementById('stats').innerHTML =
+    `<strong>${d.counts.stacked.toLocaleString()}</strong> stacked properties ` +
+    `(<strong>${d.counts.hot}</strong> on 3+ lists) from ${d.counts.signals.toLocaleString()} records · ` +
+    `updated ${when.toLocaleString()} · <a href="stacked_ghl.csv" download>Download GHL CSV</a>`;
+  document.getElementById('sources').innerHTML = d.sources.map(s =>
+    `<tr><td>${esc(s.label)}</td><td class="num">${s.records.toLocaleString()} records</td>` +
+    `<td class="${s.status === 'ok' ? 'dim' : 'warn'}">${esc(s.status)}</td></tr>`).join('');
+  const counties = [...new Set(DATA.map(s => s.county))].sort();
+  document.getElementById('county').innerHTML += counties.map(c => `<option value="${esc(c)}">${esc(title(c))}</option>`).join('');
+  const types = [...new Set(DATA.flatMap(s => s.lead_types))];
+  document.getElementById('type').innerHTML += types.map(t => `<option value="${esc(t)}">${esc(LABELS[t] || t)}</option>`).join('');
+  render();
+}).catch(e => { document.getElementById('stats').textContent = 'Could not load stacked.json: ' + e; });
+
+function filtered() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const county = document.getElementById('county').value;
+  const type = document.getElementById('type').value;
+  const tier = document.getElementById('tier').value;
+  const hideConflict = document.getElementById('hideConflict').checked;
+  const newOnly = document.getElementById('newOnly').checked;
+  const cutoff = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+  return DATA.filter(s =>
+    (!county || s.county === county) &&
+    (!type || s.lead_types.includes(type)) &&
+    (!tier || s.tier === tier) &&
+    (!hideConflict || s.owner_check !== 'conflict') &&
+    (!newOnly || (s.added_date || '') >= cutoff) &&
+    (!q || [s.address, s.city, s.zip, s.owner, s.mailing, s.parcel, s.contact_name,
+            ...s.signals.map(g => g.record_id + ' ' + g.detail + ' ' + g.owner)]
+            .join(' ').toLowerCase().includes(q)));
+}
+
+function render() {
+  const rows = filtered().sort((a, b) => {
+    const x = a[sortKey] ?? '', y = b[sortKey] ?? '';
+    return (x > y ? 1 : x < y ? -1 : 0) * sortDir || b.score - a.score;
+  });
+  document.querySelectorAll('thead th').forEach(th => th.classList.toggle('sorted', th.dataset.k === sortKey));
+  document.getElementById('count').textContent = `${rows.length.toLocaleString()} shown`;
+  if (!rows.length) { document.getElementById('rows').innerHTML = '<tr><td colspan="7" class="empty">No properties match these filters.</td></tr>'; return; }
+  document.getElementById('rows').innerHTML = rows.map(s => {
+    const cls = s.score >= 60 ? 's-high' : s.score >= 45 ? 's-mid' : 's-low';
+    const main = `<tr class="row" data-id="${esc(s.id)}">
+      <td><span class="score ${cls}">${s.score}</span></td>
+      <td>${esc(title(s.address))}<div class="faint">${esc(title(s.city))} ${esc(s.zip)} · ${esc(title(s.county))}${s.parcel ? ' · ' + esc(s.parcel) : ''}</div></td>
+      <td>${s.tier === 'Hot' ? '<div class="tier">Hot</div>' : ''}${s.lead_types.map(chip).join('')}
+          ${s.record_count > s.type_count ? `<div class="faint">${s.record_count} records</div>` : ''}</td>
+      <td>${esc(s.owner)}${s.owner_check === 'conflict' ? '<div class="warn">Owner names differ across lists</div>' : ''}
+          ${s.contact_name ? `<div class="faint">Contact: ${esc(title(s.contact_name))} ${esc(s.phone)}</div>` : ''}</td>
+      <td class="hide-sm dim">${esc(s.mailing)}${s.absentee ? '<div class="faint">Absentee</div>' : ''}</td>
+      <td class="num">${esc(s.last_date)}</td>
+      <td class="num hide-sm">${esc(s.added_date)}</td>
+    </tr>`;
+    if (!open.has(s.id)) return main;
+    return main + `<tr class="detail"><td colspan="7"><div class="detail-grid">
+      <div><h3>Records</h3>${s.signals.map(g => `<div class="sig">
+        ${chip(g.lead_type)} <span class="dim">${esc(g.source_label)}</span> · <span class="num">${esc(g.date)}</span>
+        ${money(g.amount) ? ' · ' + money(g.amount) : ''}
+        <div>${esc(g.detail)}</div>
+        <div class="faint">Owner on this list: ${esc(g.owner) || '—'} · ID ${esc(g.record_id)}
+        ${g.url ? ` · <a href="${esc(g.url)}" target="_blank" rel="noopener">Public record</a>` : ''}</div>
+      </div>`).join('')}</div>
+      <div><h3>Score</h3><ul class="reasons">${s.score_reasons.map(r => `<li>${esc(r)}</li>`).join('')}</ul></div>
+    </div></td></tr>`;
+  }).join('');
+}
+
+document.getElementById('rows').addEventListener('click', e => {
+  if (e.target.closest('a')) return;
+  const tr = e.target.closest('tr.row'); if (!tr) return;
+  const id = tr.dataset.id; open.has(id) ? open.delete(id) : open.add(id); render();
+});
+document.querySelectorAll('thead th').forEach(th => th.addEventListener('click', () => {
+  const k = th.dataset.k; sortDir = (k === sortKey) ? -sortDir : (['address', 'owner', 'mailing'].includes(k) ? 1 : -1);
+  sortKey = k; render();
+}));
+['q', 'county', 'type', 'tier', 'hideConflict', 'newOnly'].forEach(id =>
+  document.getElementById(id).addEventListener('input', render));
+</script>
+</body>
+</html>
