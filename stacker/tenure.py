@@ -117,12 +117,17 @@ def load_hamilton(cache_dir: str, log=print) -> dict:
     except Exception as e:  # noqa: BLE001
         log(f"Hamilton tenure: CAGIS folder unavailable ({e}); using cached copy")
         return (cached or {}).get("info", {})
-    if cached and cached.get("file") == newest:
+    if cached and cached.get("file") == newest and cached.get("info"):
         return cached["info"]
     try:
         data = _get(s, urllib.parse.urljoin(CAGIS_FOLDER, newest), 900).content
-        rows = csv.DictReader(io.StringIO(data.decode("latin-1")))
+        text = data.decode("latin-1")
+        rows = csv.DictReader(io.StringIO(text))
         info = build_hamilton_info(rows)
+        if not info:
+            sample = [r.get("SALDAT") for _, r in zip(range(8), csv.DictReader(io.StringIO(text)))]
+            log(f"Hamilton tenure: no sale dates parsed; SALDAT samples: {sample!r}")
+            return {}
     except Exception as e:  # noqa: BLE001
         log(f"Hamilton tenure: CAGIS file unusable ({e}); using cached copy")
         return (cached or {}).get("info", {})
