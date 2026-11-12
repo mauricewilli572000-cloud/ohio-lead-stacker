@@ -22,7 +22,7 @@ from datetime import date, datetime, timezone
 
 from stacker.adapters import ADAPTERS
 from stacker.franklin_parcels import fill_parcels as fill_franklin_parcels, load_index as load_franklin_index
-from stacker import tenure
+from stacker import outreach, tenure
 from stacker.stack import LABELS, build_stacks
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -201,6 +201,13 @@ def main(argv=None):
     save_json(os.path.join(ROOT, "docs", "stacked.json"), out)
     save_json(os.path.join(ROOT, "data", "history.json"), history)
     write_ghl(os.path.join(ROOT, "docs", "stacked_ghl.csv"), stacks)
+
+    # Outreach: skip-trace-ready files, and the GoHighLevel push (only when the webhook secret is set)
+    people, companies = outreach.write_skiptrace(stacks, os.path.join(ROOT, "docs", "skiptrace_ready.csv"),
+                                                 os.path.join(ROOT, "docs", "skiptrace_companies.csv"), LABELS)
+    print(f"Skip trace: {people} people, {companies} company owners")
+    if not args.local:
+        outreach.push_ghl(stacks, os.path.join(ROOT, "data", "ghl_sent.json"), LABELS)
 
     print(f"\n{len(signals)} signals -> {len(stacks)} stacked properties "
           f"({out['counts']['hot']} hot, {out['counts']['warm']} warm)")

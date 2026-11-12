@@ -36,12 +36,15 @@ jobs:
         run: python -m pytest -q tests
 
       - name: Stack leads
+        env:
+          GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}   # optional: push new Hot/Warm 60+ leads to GoHighLevel
         run: python run_stacker.py   # reads each scraper's published feed; never writes to those repos
 
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/stacked.json docs/stacked_ghl.csv data/history.json
+          git add docs/stacked.json docs/stacked_ghl.csv docs/skiptrace_ready.csv docs/skiptrace_companies.csv data/history.json
+          [ -f data/ghl_sent.json ] && git add data/ghl_sent.json
           git diff --cached --quiet || git commit -m "Stacked leads: daily update"
           git push

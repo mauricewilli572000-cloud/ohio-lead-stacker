@@ -136,3 +136,33 @@ def test_tenure_dates_and_scoring():
     by = {s["address"]: s for s in stacks}
     assert by["A"]["score"] == 68 and by["A"]["owned_since"] == "1998"
     assert by["B"]["score"] == 64 and "years_owned" not in by["C"]
+
+
+def test_outreach_names_and_targets():
+    from stacker.outreach import person_name, target
+    assert person_name("SMITH, JOHN A & MARY") == ("John A", "Smith")
+    assert person_name("COOK JOHN E") == ("John E", "Cook")
+    assert person_name("WARD LARRY HENRY & KANISHA JEAN GLOVER") == ("Larry Henry", "Ward")
+    assert person_name("3019 MICKEY LLC") is None and person_name("KELLEY & KELLEY INVESTMENTS LLC") is None
+    assert person_name("Michelle S. Swain", "first_last") == ("Michelle S.", "Swain")
+    t = target({"lead_types": ["probate", "tax_delinquent"], "contact_name": "SWAIN, MICHELLE S.",
+                "owner": "SWAIN DENNIS R", "mailing": "710 LONGACRE DR, Akron OH 44319"})
+    assert (t["first"], t["last"]) == ("Michelle S", "Swain") and "estate" in t["role"]
+    t = target({"lead_types": ["eviction"], "contact_name": "", "owner": "BROWN ESTATES LLC", "mailing": ""})
+    assert t["company"] == "BROWN ESTATES LLC" and not t["first"]
+
+
+def test_ghl_push_sends_once_and_on_upgrade(tmp_path, monkeypatch):
+    from stacker import outreach
+    monkeypatch.setenv("GHL_WEBHOOK_URL", "https://example.invalid/hook")
+    monkeypatch.setattr(outreach, "GHL_DELAY", 0)
+    sent = []
+    post = lambda url, p: sent.append(p["stackId"]) or 200
+    s1 = {"id": "a", "tier": "Hot", "score": 50, "lead_types": ["probate", "eviction"], "county": "franklin",
+          "address": "1 MAIN ST", "owner": "DOE JANE", "contact_name": "", "mailing": "", "signals": []}
+    s2 = {**s1, "id": "b", "tier": "Warm", "score": 40}
+    path = str(tmp_path / "sent.json")
+    assert outreach.push_ghl([s1, s2], path, {}, log=lambda *_: None, post=post) == 1
+    assert outreach.push_ghl([s1, s2], path, {}, log=lambda *_: None, post=post) == 0
+    s1["lead_types"] = ["probate", "eviction", "tax_delinquent"]
+    assert outreach.push_ghl([s1], path, {}, log=lambda *_: None, post=post) == 1 and sent == ["a", "a"]
