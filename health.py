@@ -152,9 +152,9 @@ def main(argv=None):
     for repo in cfg["repos"]:
         try:
             rows = check_repo(owner, repo, now)
-            if not rows:
-                rows = [{"repo": repo, "workflow": "(no scheduled workflow found)", "problems": [
-                    "no scheduled or recent runs found (does its workflow have a schedule?)"], "url": f"https://github.com/{owner}/{repo}/actions"}]
+            if not rows:   # e.g. a new weekly scraper before its first run: listed, not flagged
+                rows = [{"repo": repo, "workflow": "(waiting for first run)", "problems": [],
+                         "url": f"https://github.com/{owner}/{repo}/actions"}]
         except urllib.error.HTTPError as e:
             rows = [{"repo": repo, "workflow": "-", "problems": [f"could not read Actions history (HTTP {e.code})"],
                      "url": f"https://github.com/{owner}/{repo}"}]
