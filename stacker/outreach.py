@@ -169,7 +169,9 @@ class GhlApi:
         req = urllib.request.Request(GHL_API + path, method=method,
                                      data=json.dumps(body).encode() if body is not None else None,
                                      headers={"Authorization": f"Bearer {self.token}", "Version": "2021-07-28",
-                                              "Content-Type": "application/json", "Accept": "application/json"})
+                                              "Content-Type": "application/json", "Accept": "application/json",
+                                              # GHL's Cloudflare blocks Python's default user agent (error 1010)
+                                              "User-Agent": "ohio-lead-stacker/1.0 (GitHub Actions)"})
         for attempt in range(3):
             try:
                 with urllib.request.urlopen(req, timeout=30) as r:
@@ -263,7 +265,8 @@ def _types(v):
 
 def _post(url: str, payload: dict) -> int:
     req = urllib.request.Request(url, data=json.dumps(payload).encode(), method="POST",
-                                 headers={"Content-Type": "application/json"})
+                                 headers={"Content-Type": "application/json",
+                                          "User-Agent": "ohio-lead-stacker/1.0 (GitHub Actions)"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return r.status
 
