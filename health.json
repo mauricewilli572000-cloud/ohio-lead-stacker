@@ -1,0 +1,26 @@
+{
+ "owner": "mauricewilli572000-cloud",
+ "issue_repo": "ohio-lead-stacker",
+ "repos": [
+  "ohio-lead-stacker",
+  "franklin-foreclosure-scraper",
+  "franklin-county-leads",
+  "summit-county-leads",
+  "franklin-excess-funds",
+  "excess-funds-national",
+  "franklin-eviction-leads",
+  "cleveland-eviction-leads",
+  "hamilton-eviction-leads",
+  "franklin-probate-scraper",
+  "columbus-code-enforcement",
+  "cleveland-code-enforcement",
+  "cincinnati-code-enforcement",
+  "franklin-tax-delinquent-leads",
+  "summit-tax-delinquent-leads",
+  "hamilton-tax-delinquent-leads",
+  "hamilton-divorce-leads",
+  "cuyahoga-divorce-leads",
+  "llc-discount-buyers",
+  "agent-roster-scraper"
+ ]
+}

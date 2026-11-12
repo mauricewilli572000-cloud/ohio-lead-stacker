@@ -6,6 +6,10 @@ probate, tax delinquent, code violation, eviction, divorce) and ranks them.
 Franklin records without a parcel ID get one from the Auditor's monthly parcel file (matched by
 address, ZIP used to break ties; ambiguous addresses are left alone). See `stacker/franklin_parcels.py`.
 
+Health check: `health.py` (workflow "Scraper health check", daily ~10:47 AM ET) checks every scraper repo's
+scheduled runs, writes docs/health.html, and opens a GitHub issue (GitHub emails you) when something fails
+or is overdue. Repos are listed in `health.json`.
+
 Owner tenure: each stacked property's last sale date comes from the county parcel data (Franklin Auditor,
 Hamilton CAGIS, Cuyahoga Fiscal Officer). Owned 20+ years +8, 10-19 years +4. See `stacker/tenure.py`.
 

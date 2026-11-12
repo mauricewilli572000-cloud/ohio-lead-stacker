@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scraper Health</title>
+<style>
+  :root { --bg:#f7f7f5; --fg:#1d1d1b; --mute:#6b6b66; --card:#fff; --line:#e2e2dc; --bad:#b3261e; --ok:#3d6b2f; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161615; --fg:#ecece8; --mute:#9a9a93; --card:#1f1f1d; --line:#33332f; --bad:#ff8a80; --ok:#9ccc65; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.45 system-ui,sans-serif; }
+  header { padding:16px; } h1 { margin:0 0 4px; font-size:20px; } .meta { color:var(--mute); }
+  .wrap { overflow-x:auto; padding:0 16px 24px; }
+  table { border-collapse:collapse; width:100%; min-width:760px; background:var(--card); }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  .bad { color:var(--bad); font-weight:600; } .ok { color:var(--ok); } a { color:inherit; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Scraper health</h1>
+  <div class="meta" id="meta">Loading…</div>
+</header>
+<div class="wrap"><table>
+  <thead><tr><th>Status</th><th>Repo</th><th>Workflow</th><th>Last run</th><th>Last success</th><th>Usual gap</th><th>Problem</th></tr></thead>
+  <tbody id="rows"></tbody>
+</table></div>
+<script>
+const when = s => s ? s.slice(0, 16).replace("T", " ") : "";
+function cell(text, cls) { const td = document.createElement("td"); td.textContent = text ?? ""; if (cls) td.className = cls; return td; }
+fetch("health.json").then(r => r.json()).then(d => {
+  document.getElementById("meta").textContent =
+    `Checked ${d.generated_at} UTC · ${d.workflows.length} workflows · ${d.problem_count} problem(s)`;
+  const rows = [...d.workflows, ...(d.feeds || [])].sort((a, b) => (b.problems.length > 0) - (a.problems.length > 0) || a.repo.localeCompare(b.repo));
+  document.getElementById("rows").replaceChildren(...rows.map(w => {
+    const tr = document.createElement("tr");
+    const bad = w.problems.length > 0;
+    tr.append(cell(bad ? "Problem" : "OK", bad ? "bad" : "ok"));
+    const repo = document.createElement("td");
+    if (w.url) { const a = document.createElement("a"); a.href = w.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = w.repo; repo.append(a); }
+    else repo.textContent = w.repo;
+    tr.append(repo, cell(w.workflow), cell(when(w.last_run) + (w.last_result ? " · " + w.last_result : "")),
+              cell(when(w.last_success)), cell(w.usual_gap_hours ? w.usual_gap_hours + "h" : ""),
+              cell(w.problems.join("; "), bad ? "bad" : ""));
+    return tr;
+  }));
+}).catch(e => { document.getElementById("meta").textContent = "Could not load health.json: " + e; });
+</script>
+</body>
+</html>
