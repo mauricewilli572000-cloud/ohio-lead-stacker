@@ -21,6 +21,7 @@ import urllib.request
 from datetime import date, datetime, timezone
 
 from stacker.adapters import ADAPTERS
+from stacker.franklin_parcels import fill_parcels as fill_franklin_parcels, load_index as load_franklin_index
 from stacker.stack import LABELS, build_stacks
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -153,7 +154,19 @@ def main(argv=None):
         print(f"{src['label']:<30} {len(recs):>6} records  {len(sigs):>6} signals  "
               f"{matchable:>6} matchable  {status}")
 
-    stacks = build_stacks(signals, today)
+    # Franklin records mostly lack parcel IDs: fill them in from the Auditor's address list.
+    franklin_idx = None
+    if not args.local and any(x["county"] == "franklin" for x in signals):
+        franklin_idx = load_franklin_index(CACHE)
+    if franklin_idx:
+        import copy
+        before = len(build_stacks(copy.deepcopy(signals), today))
+        filled = fill_franklin_parcels(signals, franklin_idx)
+        stacks = build_stacks(signals, today)
+        print(f"Franklin parcel lookup: parcel IDs added to {filled} records; "
+              f"stacked properties {before} -> {len(stacks)}")
+    else:
+        stacks = build_stacks(signals, today)
 
     history = load_history()
     run_day = today.isoformat()

@@ -15,7 +15,7 @@ concurrency:
 jobs:
   stack:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install pytest
+      - run: pip install pytest curl_cffi   # curl_cffi: browser-like downloads from the Franklin Auditor
 
       # Last good copy of each feed, used if a scraper's feed can't be read today.
       - uses: actions/cache@v4

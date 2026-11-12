@@ -3,6 +3,9 @@
 Finds properties that show up on **two or more** of your lead lists (foreclosure,
 probate, tax delinquent, code violation, eviction, divorce) and ranks them.
 
+Franklin records without a parcel ID get one from the Auditor's monthly parcel file (matched by
+address, ZIP used to break ties; ambiguous addresses are left alone). See `stacker/franklin_parcels.py`.
+
 ## How the data stays separated
 
 ```

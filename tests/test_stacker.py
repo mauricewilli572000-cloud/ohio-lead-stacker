@@ -94,3 +94,24 @@ def test_divorce_adapter():
     assert len(sigs) == 1 and sigs[0]["lead_type"] == "divorce"
     assert sigs[0]["address_key"] and sigs[0]["date"] == "2026-11-10"
     assert "Kenneth Easterling" in sigs[0]["contact_name"]
+
+
+def test_franklin_parcel_lookup():
+    from stacker.franklin_parcels import build_index, fill_parcels, lookup, site_keys
+    from stacker.normalize import normalize_address
+    rows = [
+        {"PARCEL ID": "010-075397-00", "SiteAddress": "872 - 874 SUMMIT ST, COLUMBUS, OH 43215"},
+        {"PARCEL ID": "010-000001-00", "SiteAddress": "100 MAIN ST, COLUMBUS, OH 43215"},
+        {"PARCEL ID": "100-000002-00", "SiteAddress": "100 MAIN ST, GROVEPORT, OH 43125"},
+        {"PARCEL ID": "010-000003-00", "SiteAddress": "5 CONDO WAY UNIT A, COLUMBUS, OH 43215"},
+        {"PARCEL ID": "010-000004-00", "SiteAddress": "5 CONDO WAY UNIT B, COLUMBUS, OH 43215"},
+    ]
+    assert len(site_keys("872 - 874 SUMMIT ST")) == 2
+    idx = build_index(rows)
+    assert lookup(idx, normalize_address("874 SUMMIT STREET")) == "010075397"
+    assert lookup(idx, normalize_address("100 MAIN ST"), "43125") == "100000002"
+    assert lookup(idx, normalize_address("100 MAIN ST")) is None          # two cities, no ZIP: ambiguous
+    assert lookup(idx, normalize_address("5 CONDO WAY"), "43215") is None  # several units: ambiguous
+    sigs = [{"county": "franklin", "parcel": None, "address_key": normalize_address("874 SUMMIT ST"), "zip": ""},
+            {"county": "hamilton", "parcel": None, "address_key": normalize_address("874 SUMMIT ST"), "zip": ""}]
+    assert fill_parcels(sigs, idx) == 1 and sigs[0]["parcel"] == "010075397" and sigs[1]["parcel"] is None
