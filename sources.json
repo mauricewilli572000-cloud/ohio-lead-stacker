@@ -102,6 +102,15 @@
    "adapter": "probate"
   },
   {
+   "id": "montgomery-probate",
+   "label": "Montgomery probate",
+   "lead_type": "probate",
+   "county": "montgomery",
+   "repo": "franklin-probate-scraper",
+   "path": "docs/data/montgomery/records.json",
+   "adapter": "probate"
+  },
+  {
    "id": "summit-probate",
    "label": "Summit probate",
    "lead_type": "probate",
