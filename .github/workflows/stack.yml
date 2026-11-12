@@ -37,7 +37,9 @@ jobs:
 
       - name: Stack leads
         env:
-          GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}   # optional: push new Hot/Warm 60+ leads to GoHighLevel
+          GHL_API_TOKEN: ${{ secrets.GHL_API_TOKEN }}       # GoHighLevel Private Integration (contacts read/write)
+          GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}   # GoHighLevel sub-account (location) ID
+          GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}   # fallback only: Inbound Webhook (premium after 100)
         run: python run_stacker.py   # reads each scraper's published feed; never writes to those repos
 
       - name: Commit results

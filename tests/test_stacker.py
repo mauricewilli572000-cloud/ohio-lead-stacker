@@ -185,3 +185,36 @@ def test_ghl_push_retries_after_rate_limit(tmp_path, monkeypatch):
               for i in ("a", "b", "c")]
     assert outreach.push_ghl(stacks, str(tmp_path / "s.json"), {}, log=lambda *_: None, post=post) == 3
     assert calls == ["a", "b", "b", "c"]
+
+
+class FakeGhl:
+    def __init__(self):
+        self.calls, self.n, self.location = [], 0, "loc1"
+
+    def call(self, method, path, body=None):
+        self.calls.append((method, path, body))
+        if method == "POST" and path == "/contacts/":
+            self.n += 1
+            return {"contact": {"id": f"c{self.n}"}}
+        return {}
+
+
+def test_ghl_api_creates_then_updates_same_contact(tmp_path):
+    from stacker import outreach
+    api = FakeGhl()
+    s = {"id": "a", "tier": "Hot", "score": 90, "lead_types": ["probate", "tax_delinquent"], "county": "franklin",
+         "address": "1166 ST CECELIA DR", "city": "Columbus", "zip": "43204", "owner": "ALLEN REBECCA S",
+         "contact_name": "", "mailing": "", "signals": [{"source_label": "Franklin probate", "detail": "Estate", "date": "2026-11-01"}]}
+    old = {**s, "id": "w", "lead_types": ["eviction", "foreclosure"]}
+    path = tmp_path / "sent.json"
+    path.write_text('{"w": ["eviction"]}')       # sent earlier via webhook, no contact ID
+    assert outreach.push_ghl([s, old], str(path), {}, log=lambda *_: None, api=api) == 1
+    create = [c for c in api.calls if c[1] == "/contacts/"][0][2]
+    assert create["firstName"] == "Rebecca S" and create["lastName"] == "Allen"
+    assert create["address1"] == "1166 ST CECELIA DR" and "probate" in create["tags"]
+    assert any(c[1] == "/contacts/c1/notes" for c in api.calls)
+    assert not any("w" in str(c) and c[1] == "/contacts/" for c in api.calls)   # no duplicate for webhook lead
+    s["lead_types"] = ["probate", "tax_delinquent", "code_violation"]
+    api.calls.clear()
+    assert outreach.push_ghl([s], str(path), {}, log=lambda *_: None, api=api) == 1
+    assert ("PUT", "/contacts/c1") == api.calls[0][:2] and api.calls[1][1] == "/contacts/c1/tags"
