@@ -1,7 +1,17 @@
 {
- "generated_at": "2026-11-12 04:00",
- "problem_count": 9,
+ "generated_at": "2026-11-12 04:01",
+ "problem_count": 8,
  "workflows": [
+  {
+   "repo": "ohio-lead-stacker",
+   "workflow": "Scraper health check",
+   "last_run": "2026-11-12T04:00:10Z",
+   "last_result": "success",
+   "last_success": "2026-11-12T04:00:10Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/ohio-lead-stacker/actions/runs/43151875654",
+   "problems": []
+  },
   {
    "repo": "ohio-lead-stacker",
    "workflow": "Stack leads",
@@ -21,6 +31,18 @@
    "usual_gap_hours": 23.9,
    "url": "https://github.com/mauricewilli572000-cloud/franklin-foreclosure-scraper/actions/runs/43020828470",
    "problems": []
+  },
+  {
+   "repo": "franklin-foreclosure-scraper",
+   "workflow": "Discover Cuyahoga Parcel Fields (one-off diagnostic)",
+   "last_run": "2026-10-14T01:58:22Z",
+   "last_result": "success",
+   "last_success": "2026-10-14T01:58:22Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-foreclosure-scraper/actions/runs/38498564899",
+   "problems": [
+    "no successful run for 29.1 days (usually runs every 24h)"
+   ]
   },
   {
    "repo": "franklin-foreclosure-scraper",
@@ -90,6 +112,18 @@
   },
   {
    "repo": "excess-funds-national",
+   "workflow": "Inspect a source (debug)",
+   "last_run": "2026-11-08T22:31:51Z",
+   "last_result": "success",
+   "last_success": "2026-11-08T22:31:51Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/excess-funds-national/actions/runs/42530687123",
+   "problems": [
+    "no successful run for 3.2 days (usually runs every 24h)"
+   ]
+  },
+  {
+   "repo": "excess-funds-national",
    "workflow": "Scrape excess funds (nationwide)",
    "last_run": "2026-11-12T03:19:59Z",
    "last_result": "success",
@@ -120,11 +154,13 @@
   },
   {
    "repo": "hamilton-eviction-leads",
-   "workflow": "(no scheduled workflow found)",
-   "problems": [
-    "no scheduled runs in recent history"
-   ],
-   "url": "https://github.com/mauricewilli572000-cloud/hamilton-eviction-leads/actions"
+   "workflow": "Hamilton County eviction leads",
+   "last_run": "2026-11-11T14:40:11Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T14:40:11Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/hamilton-eviction-leads/actions/runs/43040683107",
+   "problems": []
   },
   {
    "repo": "franklin-probate-scraper",
@@ -232,19 +268,23 @@
   },
   {
    "repo": "hamilton-divorce-leads",
-   "workflow": "(no scheduled workflow found)",
-   "problems": [
-    "no scheduled runs in recent history"
-   ],
-   "url": "https://github.com/mauricewilli572000-cloud/hamilton-divorce-leads/actions"
+   "workflow": "Hamilton County divorce leads",
+   "last_run": "2026-11-11T21:27:30Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T21:27:30Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/hamilton-divorce-leads/actions/runs/43103212982",
+   "problems": []
   },
   {
    "repo": "cuyahoga-divorce-leads",
-   "workflow": "(no scheduled workflow found)",
-   "problems": [
-    "no scheduled runs in recent history"
-   ],
-   "url": "https://github.com/mauricewilli572000-cloud/cuyahoga-divorce-leads/actions"
+   "workflow": "Cuyahoga County divorce leads",
+   "last_run": "2026-11-12T02:45:24Z",
+   "last_result": "success",
+   "last_success": "2026-11-12T02:45:24Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/cuyahoga-divorce-leads/actions/runs/43143580532",
+   "problems": []
   },
   {
    "repo": "llc-discount-buyers",
