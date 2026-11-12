@@ -345,6 +345,13 @@
 "foreclosure"
 ]
 },
+"20b2da6c901f": {
+"ghl_id": "NOxZv08rZpeWBRBPBcAu",
+"types": [
+"probate",
+"tax_delinquent"
+]
+},
 "233fe5da6d39": [
 "code_violation",
 "tax_delinquent"
@@ -1155,6 +1162,13 @@
 "foreclosure"
 ]
 },
+"778b78b2d2b8": {
+"ghl_id": "OLVk1dlW4ZwbY4dZ5Xie",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "7980266b8264": {
 "ghl_id": "ma2ScyGPzuTDka5Y7V12",
 "types": [
@@ -1292,6 +1306,13 @@
 "types": [
 "code_violation",
 "foreclosure"
+]
+},
+"856b845caf7b": {
+"ghl_id": "Yal4v3iBQfqLJxU9aktD",
+"types": [
+"code_violation",
+"tax_delinquent"
 ]
 },
 "85ae5142c830": {
@@ -1446,6 +1467,13 @@
 "types": [
 "code_violation",
 "eviction"
+]
+},
+"948d38fc75f6": {
+"ghl_id": "uokzTJn9CarBHf1ZM762",
+"types": [
+"probate",
+"tax_delinquent"
 ]
 },
 "949d41c9ac9d": {
@@ -2142,6 +2170,13 @@
 "foreclosure",
 "tax_delinquent"
 ],
+"d1d5a2e4d7d3": {
+"ghl_id": "BlBFNgXm2n1tJoexKszS",
+"types": [
+"code_violation",
+"divorce"
+]
+},
 "d241d53c0807": {
 "ghl_id": "3BrsMK1jZadi2Osq1tL2",
 "types": [
