@@ -1,0 +1,269 @@
+{
+ "generated_at": "2026-11-12 04:00",
+ "problem_count": 9,
+ "workflows": [
+  {
+   "repo": "ohio-lead-stacker",
+   "workflow": "Stack leads",
+   "last_run": "2026-11-12T03:52:08Z",
+   "last_result": "success",
+   "last_success": "2026-11-12T03:52:08Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/ohio-lead-stacker/actions/runs/43151029360",
+   "problems": []
+  },
+  {
+   "repo": "franklin-foreclosure-scraper",
+   "workflow": "Cuyahoga County Lead Scrape",
+   "last_run": "2026-11-11T12:29:51Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T12:29:51Z",
+   "usual_gap_hours": 23.9,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-foreclosure-scraper/actions/runs/43020828470",
+   "problems": []
+  },
+  {
+   "repo": "franklin-foreclosure-scraper",
+   "workflow": "Franklin County Lead Scrape",
+   "last_run": "2026-11-11T14:51:29Z",
+   "last_result": "failure",
+   "last_success": "2026-11-10T15:21:19Z",
+   "usual_gap_hours": 23.8,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-foreclosure-scraper/actions/runs/43042540666",
+   "problems": [
+    "latest run failure (2026-11-11 14:51 UTC)"
+   ]
+  },
+  {
+   "repo": "franklin-county-leads",
+   "workflow": "Franklin County Lead Scraper",
+   "last_run": "2026-11-11T14:51:51Z",
+   "last_result": "failure",
+   "last_success": "2026-11-10T15:21:39Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-county-leads/actions/runs/43042599298",
+   "problems": [
+    "latest run failure (2026-11-11 14:51 UTC)"
+   ]
+  },
+  {
+   "repo": "summit-county-leads",
+   "workflow": "Summit County Lead Scrape",
+   "last_run": "2026-11-12T03:17:37Z",
+   "last_result": "failure",
+   "last_success": "2026-11-11T02:08:40Z",
+   "usual_gap_hours": 11.7,
+   "url": "https://github.com/mauricewilli572000-cloud/summit-county-leads/actions/runs/43147217308",
+   "problems": [
+    "latest run failure (2026-11-12 03:17 UTC)"
+   ]
+  },
+  {
+   "repo": "franklin-excess-funds",
+   "workflow": "Franklin County Excess Funds Scrape",
+   "last_run": "2026-11-11T17:13:27Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T17:13:27Z",
+   "usual_gap_hours": 24.2,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-excess-funds/actions/runs/43066040798",
+   "problems": []
+  },
+  {
+   "repo": "excess-funds-national",
+   "workflow": "Cuyahoga docket address lookups",
+   "last_run": "2026-11-11T20:09:47Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T20:09:47Z",
+   "usual_gap_hours": 10.2,
+   "url": "https://github.com/mauricewilli572000-cloud/excess-funds-national/actions/runs/43093886768",
+   "problems": []
+  },
+  {
+   "repo": "excess-funds-national",
+   "workflow": "Discover excess funds sources",
+   "last_run": "2026-11-11T19:44:30Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T19:44:30Z",
+   "usual_gap_hours": 8.7,
+   "url": "https://github.com/mauricewilli572000-cloud/excess-funds-national/actions/runs/43090008113",
+   "problems": []
+  },
+  {
+   "repo": "excess-funds-national",
+   "workflow": "Scrape excess funds (nationwide)",
+   "last_run": "2026-11-12T03:19:59Z",
+   "last_result": "success",
+   "last_success": "2026-11-12T03:19:59Z",
+   "usual_gap_hours": 11.6,
+   "url": "https://github.com/mauricewilli572000-cloud/excess-funds-national/actions/runs/43147481108",
+   "problems": []
+  },
+  {
+   "repo": "franklin-eviction-leads",
+   "workflow": "Franklin County Eviction Leads",
+   "last_run": "2026-11-11T16:37:12Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T16:37:12Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-eviction-leads/actions/runs/43060120862",
+   "problems": []
+  },
+  {
+   "repo": "cleveland-eviction-leads",
+   "workflow": "Cleveland eviction leads",
+   "last_run": "2026-11-11T20:11:55Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T20:11:55Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/cleveland-eviction-leads/actions/runs/43094224208",
+   "problems": []
+  },
+  {
+   "repo": "hamilton-eviction-leads",
+   "workflow": "(no scheduled workflow found)",
+   "problems": [
+    "no scheduled runs in recent history"
+   ],
+   "url": "https://github.com/mauricewilli572000-cloud/hamilton-eviction-leads/actions"
+  },
+  {
+   "repo": "franklin-probate-scraper",
+   "workflow": "Franklin probate leads",
+   "last_run": "2026-11-09T21:35:52Z",
+   "last_result": "success",
+   "last_success": "2026-11-09T21:35:52Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-probate-scraper/actions/runs/42704000780",
+   "problems": [
+    "no successful run for 2.3 days (usually runs every 24h)"
+   ]
+  },
+  {
+   "repo": "franklin-probate-scraper",
+   "workflow": "Probate - Cuyahoga",
+   "last_run": "2026-11-11T19:53:16Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T19:53:16Z",
+   "usual_gap_hours": 23.9,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-probate-scraper/actions/runs/43091342048",
+   "problems": []
+  },
+  {
+   "repo": "franklin-probate-scraper",
+   "workflow": "Probate - Franklin",
+   "last_run": "2026-11-11T18:51:39Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T18:51:39Z",
+   "usual_gap_hours": 24.1,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-probate-scraper/actions/runs/43081739223",
+   "problems": []
+  },
+  {
+   "repo": "franklin-probate-scraper",
+   "workflow": "Probate - Summit",
+   "last_run": "2026-11-11T19:31:54Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T19:31:54Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-probate-scraper/actions/runs/43088060597",
+   "problems": []
+  },
+  {
+   "repo": "columbus-code-enforcement",
+   "workflow": "Columbus Code Enforcement (nightly)",
+   "last_run": "2026-11-11T16:27:40Z",
+   "last_result": "failure",
+   "last_success": "2026-11-10T16:31:58Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/columbus-code-enforcement/actions/runs/43058543589",
+   "problems": [
+    "latest run failure (2026-11-11 16:27 UTC)"
+   ]
+  },
+  {
+   "repo": "cleveland-code-enforcement",
+   "workflow": "Cleveland code enforcement leads",
+   "last_run": "2026-11-12T03:33:47Z",
+   "last_result": "success",
+   "last_success": "2026-11-12T03:33:47Z",
+   "usual_gap_hours": 24.2,
+   "url": "https://github.com/mauricewilli572000-cloud/cleveland-code-enforcement/actions/runs/43149039358",
+   "problems": []
+  },
+  {
+   "repo": "cincinnati-code-enforcement",
+   "workflow": "Cincinnati code enforcement leads",
+   "last_run": "2026-11-11T18:00:30Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T18:00:30Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/cincinnati-code-enforcement/actions/runs/43073588810",
+   "problems": []
+  },
+  {
+   "repo": "franklin-tax-delinquent-leads",
+   "workflow": "Franklin Tax Delinquent Leads",
+   "last_run": "2026-11-11T18:45:39Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T18:45:39Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/franklin-tax-delinquent-leads/actions/runs/43080805570",
+   "problems": []
+  },
+  {
+   "repo": "summit-tax-delinquent-leads",
+   "workflow": "Summit Tax Delinquent Leads",
+   "last_run": "2026-11-11T18:53:08Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T18:53:08Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/summit-tax-delinquent-leads/actions/runs/43081971753",
+   "problems": []
+  },
+  {
+   "repo": "hamilton-tax-delinquent-leads",
+   "workflow": "Hamilton Tax Delinquent Leads",
+   "last_run": "2026-11-11T18:44:22Z",
+   "last_result": "success",
+   "last_success": "2026-11-11T18:44:22Z",
+   "usual_gap_hours": 24.1,
+   "url": "https://github.com/mauricewilli572000-cloud/hamilton-tax-delinquent-leads/actions/runs/43080598860",
+   "problems": []
+  },
+  {
+   "repo": "hamilton-divorce-leads",
+   "workflow": "(no scheduled workflow found)",
+   "problems": [
+    "no scheduled runs in recent history"
+   ],
+   "url": "https://github.com/mauricewilli572000-cloud/hamilton-divorce-leads/actions"
+  },
+  {
+   "repo": "cuyahoga-divorce-leads",
+   "workflow": "(no scheduled workflow found)",
+   "problems": [
+    "no scheduled runs in recent history"
+   ],
+   "url": "https://github.com/mauricewilli572000-cloud/cuyahoga-divorce-leads/actions"
+  },
+  {
+   "repo": "llc-discount-buyers",
+   "workflow": "(no scheduled workflow found)",
+   "problems": [
+    "no scheduled runs in recent history"
+   ],
+   "url": "https://github.com/mauricewilli572000-cloud/llc-discount-buyers/actions"
+  },
+  {
+   "repo": "agent-roster-scraper",
+   "workflow": "Agent roster nightly",
+   "last_run": "2026-11-09T23:49:55Z",
+   "last_result": "success",
+   "last_success": "2026-11-09T23:49:55Z",
+   "usual_gap_hours": 24.0,
+   "url": "https://github.com/mauricewilli572000-cloud/agent-roster-scraper/actions/runs/42723596019",
+   "problems": []
+  }
+ ],
+ "feeds": []
+}
