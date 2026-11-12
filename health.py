@@ -24,7 +24,8 @@ from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 API = "https://api.github.com"
-IGNORE_WORDS = ("recon", "pages build", "pages-build", "copilot", "dependabot")
+IGNORE_WORDS = ("recon", "pages build", "pages-build", "copilot", "dependabot", "diagnostic", "debug",
+                "discover", "inspect", "one-off", "test")
 ISSUE_TITLE = "Scraper health check: problems found"
 
 
@@ -64,8 +65,8 @@ def check_repo(owner, repo, now, runs=None):
         if not sched:
             # New workflow whose first scheduled run hasn't happened yet: count it if it was run by hand.
             manual = [r for r in rs if r.get("event") == "workflow_dispatch"]
-            if not manual:
-                continue                   # not a scraper workflow (push-only builds, etc.)
+            if not manual or hours(now, ts(max(r["created_at"] for r in manual))) > 72:
+                continue                   # not a (new) scraper workflow: push-only builds, old manual tools
             rs = manual
         gaps = [hours(a, b) for a, b in zip(sched, sched[1:]) if hours(a, b) > 0.5]
         usual = statistics.median(gaps) if gaps else 24.0
@@ -149,7 +150,7 @@ def main(argv=None):
             rows = check_repo(owner, repo, now)
             if not rows:
                 rows = [{"repo": repo, "workflow": "(no scheduled workflow found)", "problems": [
-                    "no scheduled runs in recent history"], "url": f"https://github.com/{owner}/{repo}/actions"}]
+                    "no scheduled or recent runs found (does its workflow have a schedule?)"], "url": f"https://github.com/{owner}/{repo}/actions"}]
         except urllib.error.HTTPError as e:
             rows = [{"repo": repo, "workflow": "-", "problems": [f"could not read Actions history (HTTP {e.code})"],
                      "url": f"https://github.com/{owner}/{repo}"}]
