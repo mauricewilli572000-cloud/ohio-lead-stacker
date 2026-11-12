@@ -138,6 +138,15 @@
    "adapter": "tax_delinquent"
   },
   {
+   "id": "montgomery-tax",
+   "label": "Montgomery tax delinquent",
+   "lead_type": "tax_delinquent",
+   "county": "montgomery",
+   "repo": "montgomery-tax-delinquent-leads",
+   "path": "docs/montgomery_tax_delinquent.json",
+   "adapter": "tax_delinquent"
+  },
+  {
    "id": "hamilton-divorce",
    "label": "Hamilton divorce",
    "lead_type": "divorce",

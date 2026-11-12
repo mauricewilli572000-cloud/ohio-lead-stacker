@@ -94,6 +94,10 @@ def normalize_parcel(raw, county):
     """Parcel ID -> digits only, with county-specific fixes. None if unusable."""
     if not raw:
         return None
+    if county == "montgomery":
+        # 'R72 06602 0033': the letter is part of the ID, keep it.
+        d = re.sub(r"[^A-Z0-9]", "", str(raw).upper())
+        return d if len(d) >= 10 else None
     d = re.sub(r"\D", "", str(raw))
     if not d or set(d) == {"0"}:
         return None
