@@ -153,6 +153,7 @@ Charles,Hitchcock,1847 CARLL ST,CINCINNATI,OH,45225,1847 CARLL ST,Cincinnati,OH,
 Richard,Howell,2233 MAPLEWOOD AVE,CINCINNATI,OH,45219,2233 MAPLEWOOD AVE,Cincinnati,OH,45219,owner,HOWELL RICHARD,Hamilton,890002004300,Tax delinquent + Code violation,Warm,63,2002,96d83e1122a7
 Arlene,Spivey,3207 MOZART AVE APT 23,CINCINNATI,OH,45211,2268 SCHOEDINGER AV,Cincinnati,OH,,owner,SPIVEY ARLENE,Hamilton,2050020002300,Tax delinquent + Code violation,Warm,63,1990,cdc33a59c060
 William,Mccorvey,2288 TAYLOR AVE,Columbus,OH,43211,2288 TAYLOR AVE,Columbus,OH,43211,owner,MCCORVEY WILLIAM,Franklin,010067466,Tax delinquent + Code violation,Warm,63,2004,7e1c0db17117
+Pratyush,Singh,1751 COTTONWOOD DR,Lewis Center,OH,43035,2337 DELBERT RD,Columbus,OH,43211,owner,SINGH PRATYUSH,Franklin,010070113,Tax delinquent + Code violation,Warm,63,2022,1c8d299dc637
 Louis A,Walker,2379 VENDOME DR,Columbus,OH,43219,2379 VENDOME DR,Columbus,OH,43219,owner,WALKER LOUIS A,Franklin,010167173,Tax delinquent + Code violation,Warm,63,1993,b30e23ff02ac
 Carmen L,Harris,1201 BRYDEN RD,Columbus,OH,43205,242 RHOADS AVE,Columbus,OH,43205,owner,HARRIS CARMEN L,Franklin,010029468,Tax delinquent + Code violation,Warm,63,2025,0fd89bfcd36e
 Kenneth,Kirk,246 LOXLEY DR,Columbus,OH,43207,246 LOXLEY DR,Columbus,OH,43207,owner,KIRK KENNETH,Franklin,010113820,Tax delinquent + Code violation,Warm,63,2001,f4fa7944687b
@@ -180,6 +181,7 @@ Lester,Williams,3562 HARVEY AVE,CINCINNATI,OH,45229,1242 1ST AV,Cincinnati,OH,,o
 Emebet,Yewnetu,1830 E RICH ST,Columbus,OH,43205,1830 E RICH ST,Columbus,OH,43205,owner,YEWNETU EMEBET,Franklin,010004961,Tax delinquent + Code violation,Warm,62,2013,9852abf70174
 Jasmine S,Richardson,608 BERKELEY RD,Columbus,OH,43205,608 BERKELEY RD,Columbus,OH,43205,owner,RICHARDSON JASMINE S,Franklin,010049373,Tax delinquent + Code violation,Warm,62,2014,87cfa99401a6
 Dan E,Coleman,4495 HABERSACK AVE,Columbus,OH,43207,115 KAIL AVE,Columbus,OH,43207,owner,COLEMAN DAN E,Franklin,010112558,Tax delinquent + Code violation,Warm,61,2026,c73db1d02595
+John,Borghese,1530 ELMORE AVE,Columbus,OH,43224,1530 ELMORE AVE,Columbus,OH,43224,owner,BORGHESE JOHN V,Franklin,010006459,Tax delinquent + Code violation,Warm,61,2018,6eaf77570f69
 Roger Q,Cobb,1111 S CLIFTON ST,FULTON,MS,38843,1635 MINION AV,Cincinnati,OH,,owner,COBB ROGER Q & KATHI A,Hamilton,204015001700,Tax delinquent + Code violation,Warm,61,1990,130827944b07
 Carol,Good,1724 UNION AVE,Columbus,OH,43223,1724 UNION AVE,Columbus,OH,43223,owner,GOOD CAROL,Franklin,010067602,Tax delinquent + Code violation,Warm,61,2022,57fd62b3d7ae
 Rueben,Peppers,3362 SURVEYOR CT,DOUGLASVILLE,GA,30135,1737 PULTE ST,Cincinnati,OH,,owner,PEPPERS RUEBEN & DEBORAH,Hamilton,2020040006200,Tax delinquent + Code violation,Warm,61,2005,de6b228d2fd6
@@ -210,7 +212,6 @@ Lisa,Johnson,P O BOX 36152,CINCINNATI,OH,45236,1833 SUNNYBROOK DR,Cincinnati,OH,
 Susan,Pokorney,203 31ST ST,Barberton,OH,44203,203 31ST ST,Barberton,OH,44203,estate contact (owner deceased),RADABAUGH REBECCA A,Summit,0103946,Probate + Tax delinquent,Warm,60,,86c3c30ac5d0
 Donald Adams,Baggett,113 BRAEHILL TERRACE DR,WINSTON SALEM,NC,27104,2195 HARRISON AV,Cincinnati,OH,,owner,BAGGETT DONALD ADAMS II,Hamilton,2130001002700,Tax delinquent + Code violation,Warm,60,2018,6b3479cbefe0
 Johnnell,Denton,8412 CARROL AVE,CINCINNATI,OH,45231,2265 RICE ST,Cincinnati,OH,,owner,DENTON JOHNNELL,Hamilton,930002010500,Tax delinquent + Code violation,Warm,60,2023,8902b55c2cbf
-Pratyush,Singh,1751 COTTONWOOD DR,Lewis Center,OH,43035,2337 DELBERT RD,Columbus,OH,43211,owner,SINGH PRATYUSH,Franklin,010070113,Tax delinquent + Code violation,Warm,60,2022,1c8d299dc637
 Matthew S,Cooperwood,2338 E 82 ST,CLEVELAND,OH,44104,2338 E 82ND ST,Cleveland,OH,44104,owner,"COOPERWOOD, MATTHEW S SR",Cuyahoga,11926051,Foreclosure + Code violation,Warm,60,2025,2eecf2087aa8
 Dominic James Michael,Papa,2394 GOODENOUGH AVE,Akron,OH,44320,2394 GOODENOUGH AVE,Akron,OH,44320,estate contact (owner deceased),GRAMMER FLOYD R,Summit,1502009,Probate + Tax delinquent,Warm,60,,726b22d37e60
 Timothy,Elkins,2440 S 5TH ST,Columbus,OH,43207,240 LOXLEY DR,Columbus,OH,43207,owner,ELKINS TIMOTHY,Franklin,010113821,Tax delinquent + Code violation,Warm,60,2019,b96f176137f8
@@ -457,7 +458,6 @@ Qasim,Qabie,1235 E HUDSON ST,Columbus,OH,43211,1277 E HUDSON ST,Columbus,OH,4321
 Gabrielle Noelle,Dorsey,1338 HARTFORD AVE,Akron,OH,44320,1338 HARTFORD AVE,Akron,OH,44320,estate contact (owner deceased),DICKSON BARBARA,Summit,6724023,Probate + Tax delinquent,Warm,55,,319d51d0ef8f
 Mary Elaine,Steward,1339 GAULT ST,Columbus,OH,43205,1339 GAULT ST,Columbus,OH,43205,owner,STEWARD MARY ELAINE,Franklin,010070197,Tax delinquent + Code violation,Warm,55,2018,4b446a94aa7a
 Amanda M,Zganjar,1358 MOORE ST,Akron,OH,44301,1358 MOORE ST,Akron,OH,44301,estate contact (owner deceased),HIGGINS CHARLES N JR,Summit,6740511,Probate + Tax delinquent,Warm,55,,6a1aed79a57b
-John,Borghese,1530 ELMORE AVE,Columbus,OH,43224,1530 ELMORE AVE,Columbus,OH,43224,owner,BORGHESE JOHN V,Franklin,010006459,Tax delinquent + Code violation,Warm,55,2018,6eaf77570f69
 Edgar,Moreno,1587 ABERDEEN AVE,Columbus,OH,43211,1587 ABERDEEN AVE,Columbus,OH,43211,owner,MORENO EDGAR,Franklin,010059970,Tax delinquent + Code violation,Warm,55,2023,6636f3bc4bcc
 Matos Austria E,Morillo,6304 PRITCHARD DR,Galloway,OH,43119,1633 SHADY LANE RD,Columbus,OH,43227,owner,MORILLO MATOS AUSTRIA E,Franklin,010106280,Tax delinquent + Code violation,Warm,55,2020,c7f9c3f939fe
 David E,Reifsnyder,1640 REDWOOD AVE,Akron,OH,44301,1640 REDWOOD AVE,Akron,OH,44301,estate contact (owner deceased),REIFSNYDER KENNETH E & PATRICIA E,Summit,6823063,Probate + Tax delinquent,Warm,55,,b1d9f9c534e1
@@ -1036,6 +1036,7 @@ Nicholas,Dorizas,2440 GILBERT AVE,CINCINNATI,OH,45206,2444 GILBERT AV,Cincinnati
 Jennifer,Clark,1930 VINE ST #3,CINCINNATI,OH,45202,2453 PARIS ST,Cincinnati,OH,,owner,CLARK JENNIFER,Hamilton,890004006600,Tax delinquent + Code violation,Warm,50,2017,3fe958e576fb
 Pedro J Bejarano,Cerda,1807 AVONLEA AVE,CINCINNATI,OH,45237,2471 EVERGLADE PL,Cincinnati,OH,,owner,CERDA PEDRO J BEJARANO,Hamilton,2030028022900,Tax delinquent + Code violation,Warm,50,2025,f4068592197c
 Anber M,Brooks,1900 FREEMAN AVE #10,CINCINNATI,OH,45214,2482 SEEGAR AV,Cincinnati,OH,,owner,BROOKS ANBER M,Hamilton,2030029003200,Tax delinquent + Code violation,Warm,50,2019,e1b8a2e782ca
+Michael W,Sanders,PO BOX 9202,Coppell,TX,75019,2485 JOYCE AVE,Columbus,OH,43211,owner,SANDERS MICHAEL W,Franklin,010076017,Code violation + Eviction,Warm,50,2026,4bac78464c21
 Douglas,Banks,2335 BUTTERMILK CROSSING SUITE 339,CRESCENT SPRINGS,KY,41017,2503 W MCMICKEN AVE,Cincinnati,OH,,owner,BANKS DOUGLAS,Hamilton,980005005200,Tax delinquent + Code violation,Warm,50,2020,32fb85514af3
 Mckayla Yedim,Mokay,2506 WARSAW AVE,CINCINNATI,OH,45204,2506 WARSAW AVE,Cincinnati,OH,45204,owner,MOKAY MCKAYLA YEDIM & MCKENZY NIIAMKEY MOKAY,Hamilton,1750013006200,Tax delinquent + Code violation,Warm,50,2025,503ef07bcff8
 Larry Henry,Ward,2508 WARSAW AVE,CINCINNATI,OH,45204,2508 WARSAW AVE,Cincinnati,OH,45204,owner,WARD LARRY HENRY & KANISHA JEAN GLOVER,Hamilton,1750013006100,Tax delinquent + Code violation,Warm,50,2018,dfd511e1a01f

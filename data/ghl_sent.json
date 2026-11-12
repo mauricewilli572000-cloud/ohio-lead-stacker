@@ -1067,6 +1067,13 @@
 "tax_delinquent"
 ]
 },
+"6eaf77570f69": {
+"ghl_id": "lvt1WEdLGCn8wxK2AjBS",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "6f1ce77d7888": {
 "ghl_id": "IygDQtvpl8n64Iky2exR",
 "types": [
@@ -2567,6 +2574,13 @@
 },
 "fc7eb4704f25": {
 "ghl_id": "sTICkFrSvtM84eVXRUgL",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"fdd97dc6d211": {
+"ghl_id": "VWwpaQQ8wY9LzVMknbba",
 "types": [
 "code_violation",
 "tax_delinquent"
