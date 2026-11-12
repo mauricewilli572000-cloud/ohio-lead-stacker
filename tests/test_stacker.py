@@ -125,6 +125,7 @@ def test_tenure_dates_and_scoring():
     assert tenure.parse_date(1104537600000) == "2005-01-01"
     assert tenure.parse_date("15-MAR-98") == "1998-03-15"
     assert tenure.parse_date("") == ""
+    assert tenure.parse_date("1996/04/16 00:00:00+00") == "1996-04-16"
     row = {"PROPTYID": "0010001000100", "BOOK": "1", "PAGE": "1", "PARCEL": "1", "SALDAT": "19980315"}
     assert tenure.build_hamilton_info([row]) == {"10001000100": "1998-03-15", "10001000100": "1998-03-15"}
     stacks = [{"county": "franklin", "parcel": "010075397", "score": 60, "score_reasons": [], "type_count": 2, "address": "A"},

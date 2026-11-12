@@ -47,6 +47,9 @@ def parse_date(v) -> str:
         return f"{t[:4]}-{t[4:6]}-{t[6:]}" if 1800 < int(t[:4]) < 2100 else ""
     if re.fullmatch(r"-?\d{11,}", t):
         return parse_date(int(t))
+    m = re.match(r"(\d{4})[/-](\d{1,2})[/-](\d{1,2})", t)          # '1996/04/16 00:00:00+00'
+    if m and 1800 < int(m.group(1)) < 2100:
+        return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
     d = sale_date(t)
     if d:
         return d
