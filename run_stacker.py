@@ -22,6 +22,7 @@ from datetime import date, datetime, timezone
 
 from stacker.adapters import ADAPTERS
 from stacker.franklin_parcels import fill_parcels as fill_franklin_parcels, load_index as load_franklin_index
+from stacker import tenure
 from stacker.stack import LABELS, build_stacks
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -113,7 +114,7 @@ def write_ghl(path, stacks):
     cols = ["First Name", "Last Name", "Phone", "Mailing Address", "Mailing City",
             "Mailing State", "Mailing Zip", "Property Address", "Property City",
             "Property State", "Property Zip", "Lead Type", "Stack Tier", "Signal Count",
-            "Seller Score", "Tags", "Contact Name", "Last Activity", "Notes"]
+            "Seller Score", "Tags", "Contact Name", "Last Activity", "Owned Since", "Notes"]
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(cols)
@@ -126,7 +127,7 @@ def write_ghl(path, stacks):
                 s["address"], s["city"], "OH", s["zip"],
                 "Stacked: " + " + ".join(types), s["tier"], s["type_count"], s["score"],
                 ",".join(["stacked"] + [t for t in s["lead_types"]] + [s["county"]]),
-                s["contact_name"], s["last_date"],
+                s["contact_name"], s["last_date"], s.get("owned_since", ""),
                 " | ".join(f"{x['source_label']}: {x['detail']}" for x in s["signals"][:6]),
             ])
 
@@ -155,9 +156,10 @@ def main(argv=None):
               f"{matchable:>6} matchable  {status}")
 
     # Franklin records mostly lack parcel IDs: fill them in from the Auditor's address list.
-    franklin_idx = None
+    franklin_data = None
     if not args.local and any(x["county"] == "franklin" for x in signals):
-        franklin_idx = load_franklin_index(CACHE)
+        franklin_data = load_franklin_index(CACHE)
+    franklin_idx = franklin_data and franklin_data.get("index")
     if franklin_idx:
         import copy
         before = len(build_stacks(copy.deepcopy(signals), today))
@@ -167,6 +169,18 @@ def main(argv=None):
               f"stacked properties {before} -> {len(stacks)}")
     else:
         stacks = build_stacks(signals, today)
+
+    # How long the owner has held each stacked property (long-held homes = more equity).
+    if not args.local:
+        sold = {"franklin": (franklin_data or {}).get("info") or {}}
+        if any(s["county"] == "hamilton" and s["parcel"] for s in stacks):
+            sold["hamilton"] = tenure.load_hamilton(CACHE)
+        cuy = {s["parcel"] for s in stacks if s["county"] == "cuyahoga" and s["parcel"]}
+        if cuy:
+            sold["cuyahoga"] = tenure.load_cuyahoga(CACHE, cuy, today)
+        n = tenure.apply(stacks, sold, today)
+        print(f"Owner tenure: sale dates found for {n} of {len(stacks)} stacked properties; "
+              f"{sum(1 for s in stacks if (s.get('years_owned') or 0) >= 20)} owned 20+ years")
 
     history = load_history()
     run_day = today.isoformat()

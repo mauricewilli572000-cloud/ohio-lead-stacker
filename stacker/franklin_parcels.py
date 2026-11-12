@@ -90,11 +90,16 @@ def site_keys(street: str) -> list[str]:
     return [k for k in dict.fromkeys(normalize_address(f"{n} {rest}") for n in nums) if k]
 
 
-def build_index(rows) -> dict[str, list[list[str]]]:
-    """rows of Parcel.txt -> {address_key: [[zip, parcel9], ...]}."""
+def build_index(rows, info: dict | None = None) -> dict[str, list[list[str]]]:
+    """rows of Parcel.txt -> {address_key: [[zip, parcel9], ...]}.
+    If `info` is given, it is filled with {parcel9: last_sale_date} (parcels with a sale date only)."""
     idx: dict[str, set] = {}
     for r in rows:
         pid = normalize_parcel(r.get("PARCEL ID"), "franklin")
+        if pid and info is not None:
+            sold = sale_date(r.get("LastSaleDate"))
+            if sold:
+                info[pid] = sold
         site = r.get("SiteAddress") or ""
         if not pid or not site:
             continue
@@ -104,6 +109,16 @@ def build_index(rows) -> dict[str, list[list[str]]]:
         for k in site_keys(parts[0] if parts else ""):
             idx.setdefault(k, set()).add((zipc, pid))
     return {k: sorted(map(list, v)) for k, v in idx.items()}
+
+
+def sale_date(raw) -> str:
+    """'03/15/1998' / '1998-03-15' / '03/15/1998 00:00:00' -> '1998-03-15' ('' if none)."""
+    t = str(raw or "").strip()
+    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", t)
+    if m:
+        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", t)
+    return m.group(0) if m else ""
 
 
 def lookup(idx: dict, address_key: str, zipc: str = "") -> str | None:
@@ -121,8 +136,12 @@ def lookup(idx: dict, address_key: str, zipc: str = "") -> str | None:
     return parcels.pop() if len(parcels) == 1 else None
 
 
+CACHE_VERSION = 2       # 2: also keeps each parcel's last sale date
+
+
 def load_index(cache_dir: str, log=print) -> dict | None:
-    """Cached lookup, rebuilt when the Auditor has a newer drop. None if unavailable."""
+    """Cached lookup, rebuilt when the Auditor has a newer drop. None if unavailable.
+    Returns {"index": address lookup, "info": {parcel: last_sale_date}}."""
     path = os.path.join(cache_dir, "franklin_parcel_index.json")
     cached = None
     if os.path.exists(path):
@@ -131,17 +150,19 @@ def load_index(cache_dir: str, log=print) -> dict | None:
                 cached = json.load(f)
         except Exception:  # noqa: BLE001
             cached = None
+    if cached and cached.get("version") != CACHE_VERSION:
+        cached = None                      # older layout: rebuild
     s = _session()
     if s is None:
-        return cached and cached["index"]
+        return cached
     try:
         drops = latest_drops(s)
     except Exception as e:  # noqa: BLE001
         log(f"Franklin parcel lookup: Auditor drop list unavailable ({e}); using cached copy")
-        return cached and cached["index"]
+        return cached
     for name, url in drops[:4]:
         if cached and cached.get("drop") == name:
-            return cached["index"]
+            return cached
         try:
             data = _get(s, url + urllib.parse.quote(ZIP_NAME)).content
             with zipfile.ZipFile(io.BytesIO(data)) as z:
@@ -150,16 +171,18 @@ def load_index(cache_dir: str, log=print) -> dict | None:
                     continue
                 with z.open(member) as raw:
                     text = io.TextIOWrapper(raw, encoding="utf-8-sig", errors="replace", newline="")
-                    idx = build_index(csv.DictReader(text, delimiter="\t"))
+                    info: dict = {}
+                    idx = build_index(csv.DictReader(text, delimiter="\t"), info)
         except Exception as e:  # noqa: BLE001
             log(f"Franklin parcel lookup: drop {name} unusable ({e})")
             continue
         os.makedirs(cache_dir, exist_ok=True)
+        out = {"version": CACHE_VERSION, "drop": name, "index": idx, "info": info}
         with open(path, "w", encoding="utf-8") as f:
-            json.dump({"drop": name, "index": idx}, f, separators=(",", ":"))
-        log(f"Franklin parcel lookup: built from {name} ({len(idx)} addresses)")
-        return idx
-    return cached and cached["index"]
+            json.dump(out, f, separators=(",", ":"))
+        log(f"Franklin parcel lookup: built from {name} ({len(idx)} addresses, {len(info)} parcels)")
+        return out
+    return cached
 
 
 def fill_parcels(signals: list[dict], idx: dict) -> int:

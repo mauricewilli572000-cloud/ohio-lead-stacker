@@ -185,7 +185,7 @@ function render() {
           ${s.record_count > s.type_count ? `<div class="faint">${s.record_count} records</div>` : ''}</td>
       <td>${esc(s.owner)}${s.owner_check === 'conflict' ? '<div class="warn">Owner names differ across lists</div>' : ''}
           ${s.contact_name ? `<div class="faint">Contact: ${esc(title(s.contact_name))} ${esc(s.phone)}</div>` : ''}</td>
-      <td class="hide-sm dim">${esc(s.mailing)}${s.absentee ? '<div class="faint">Absentee</div>' : ''}</td>
+      <td class="hide-sm dim">${esc(s.mailing)}${s.absentee ? '<div class="faint">Absentee</div>' : ''}${s.owned_since ? `<div class="faint">Owned since ${esc(s.owned_since)}</div>` : ''}</td>
       <td class="num">${esc(s.last_date)}</td>
       <td class="num hide-sm">${esc(s.added_date)}</td>
     </tr>`;
