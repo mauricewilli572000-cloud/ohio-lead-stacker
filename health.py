@@ -62,7 +62,11 @@ def check_repo(owner, repo, now, runs=None):
     for name, rs in sorted(by_wf.items()):
         sched = sorted((ts(r["created_at"]) for r in rs if r.get("event") == "schedule"), reverse=True)
         if not sched:
-            continue                       # not a scheduled scraper workflow (manual-only, push-only)
+            # New workflow whose first scheduled run hasn't happened yet: count it if it was run by hand.
+            manual = [r for r in rs if r.get("event") == "workflow_dispatch"]
+            if not manual:
+                continue                   # not a scraper workflow (push-only builds, etc.)
+            rs = manual
         gaps = [hours(a, b) for a, b in zip(sched, sched[1:]) if hours(a, b) > 0.5]
         usual = statistics.median(gaps) if gaps else 24.0
         done = [r for r in rs if r.get("status") == "completed"]

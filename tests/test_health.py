@@ -34,3 +34,8 @@ def test_weekly_not_flagged_early_and_recon_ignored():
 
 def test_push_only_workflows_skipped():
     assert health.check_repo("o", "r", NOW, [run("Deploy", 2, "failure", "push")]) == []
+
+
+def test_new_workflow_run_by_hand_counts():
+    rows = health.check_repo("o", "r", NOW, [run("Divorce leads", 5, "success", "workflow_dispatch")])
+    assert len(rows) == 1 and rows[0]["problems"] == []
