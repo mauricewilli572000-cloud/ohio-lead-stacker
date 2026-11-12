@@ -196,7 +196,8 @@ def contact_fields(s: dict, labels: dict) -> dict:
             "state": state, "postalCode": zip_, "source": "ohio-lead-stacker",
             "tags": ["stacked", s["county"], (s.get("tier") or "").lower()] + list(s["lead_types"])}
     if t["company"]:
-        body.update({"companyName": t["company"], "name": t["company"]})
+        # GHL requires a first or last name (or email/phone): the company goes in lastName as well
+        body.update({"companyName": t["company"], "lastName": t["company"]})
     return {k: v for k, v in body.items() if v not in ("", None)}
 
 

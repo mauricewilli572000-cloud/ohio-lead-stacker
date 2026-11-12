@@ -218,3 +218,11 @@ def test_ghl_api_creates_then_updates_same_contact(tmp_path):
     api.calls.clear()
     assert outreach.push_ghl([s], str(path), {}, log=lambda *_: None, api=api) == 1
     assert ("PUT", "/contacts/c1") == api.calls[0][:2] and api.calls[1][1] == "/contacts/c1/tags"
+
+
+def test_ghl_company_contact_has_a_name():
+    from stacker.outreach import contact_fields
+    s = {"tier": "Hot", "score": 80, "lead_types": ["eviction"], "county": "hamilton", "address": "5526 HAMILTON AVE",
+         "owner": "ASTOR PLACE OF COLLEGE HILL LLC", "contact_name": "", "mailing": "4014 SPRING GROVE AVE, CINCINNATI OH 45223"}
+    f = contact_fields(s, {})
+    assert f["lastName"] == f["companyName"] == "ASTOR PLACE OF COLLEGE HILL LLC" and f["postalCode"] == "45223"
