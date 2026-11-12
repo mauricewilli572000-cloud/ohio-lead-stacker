@@ -49,10 +49,14 @@ def hours(a, b):
     return (a - b).total_seconds() / 3600
 
 
-def check_repo(owner, repo, now, runs=None):
+def check_repo(owner, repo, now, runs=None, active_ids=None):
     """List of workflow summaries + problems for one repo."""
     if runs is None:
         runs = gh(f"/repos/{owner}/{repo}/actions/runs?per_page=100").get("workflow_runs", [])
+        wfs = gh(f"/repos/{owner}/{repo}/actions/workflows?per_page=100").get("workflows", [])
+        active_ids = {w["id"] for w in wfs if w.get("state") == "active"}
+    if active_ids is not None:   # renamed/deleted/disabled workflows leave old runs behind: ignore them
+        runs = [r for r in runs if r.get("workflow_id") in active_ids]
     by_wf = {}
     for r in runs:
         name = r.get("name") or ""

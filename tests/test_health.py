@@ -39,3 +39,10 @@ def test_push_only_workflows_skipped():
 def test_new_workflow_run_by_hand_counts():
     rows = health.check_repo("o", "r", NOW, [run("Divorce leads", 5, "success", "workflow_dispatch")])
     assert len(rows) == 1 and rows[0]["problems"] == []
+
+
+def test_deleted_workflow_ignored():
+    old = dict(run("Franklin probate leads", 60), workflow_id=1)
+    new = dict(run("Probate - Franklin", 3), workflow_id=2)
+    rows = health.check_repo("o", "r", NOW, [old, new], active_ids={2})
+    assert [r["workflow"] for r in rows] == ["Probate - Franklin"]
