@@ -145,6 +145,15 @@
    "repo": "hamilton-divorce-leads",
    "path": "docs/hamilton_divorce.json",
    "adapter": "divorce"
+  },
+  {
+   "id": "cuyahoga-divorce",
+   "label": "Cuyahoga divorce",
+   "lead_type": "divorce",
+   "county": "cuyahoga",
+   "repo": "cuyahoga-divorce-leads",
+   "path": "docs/cuyahoga_divorce.json",
+   "adapter": "divorce"
   }
  ]
 }
