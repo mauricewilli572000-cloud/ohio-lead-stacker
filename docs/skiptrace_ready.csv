@@ -3,14 +3,14 @@ Rebecca,Allen,1166 ST CECELIA DR,Columbus,OH,43204,1166 ST CECELIA DR,Columbus,O
 Christopher Lee,Wood,523 BASSWOOD RD,Columbus,OH,43207,523 BASSWOOD RD,Columbus,OH,43207,estate contact (owner deceased),SPROUSE BONNIE D AFDT,Franklin,010098500,Probate + Tax delinquent + Code violation,Hot,88,1993,eef4073f3da3
 Alexandra,Dixon,848 BRENTNELL AVE,Columbus,OH,43219,848 BRENTNELL AVE,Columbus,OH,43219,estate contact (owner deceased),DIGGS JANICE,Franklin,010081795,Probate + Tax delinquent + Code violation,Hot,84,2012,f71bd41bc661
 Karen,Marshall,3532 HUDSON AVE,CINCINNATI,OH,45207,3619 WABASH AVE APT #2,Cincinnati,OH,45207,owner,MARSHALL KAREN,Hamilton,570003002400,Tax delinquent + Code violation + Eviction,Hot,78,2000,3321623e7d01
-Mark H,Rappaport,404 DUMBARTON BLVD,Richmond Heights,OH,44143,404 DUMBARTON BLVD,Richmond Heights,OH,44143,estate contact (owner deceased),RAPPAPORT  SUSAN J.,Cuyahoga,66213036,Probate + Foreclosure,Warm,78,2003,34d66550ac1b
-Megan,Buehler,406 ANNE DR,Berea,OH,44017,406 ANNE DR,Berea,OH,44017,estate contact (owner deceased),BUEHLER  NANCY L.,Cuyahoga,36327107,Probate + Foreclosure,Warm,78,2006,ff3e96e0c8bb
+Mark H,Rappaport,404 DUMBARTON BLVD,Richmond Heights,OH,44143,404 DUMBARTON BLVD,Richmond Heights,OH,44143,estate contact (owner deceased),RAPPAPORT  SUSAN J.,Cuyahoga,66213036,Foreclosure + Probate,Warm,78,2003,34d66550ac1b
+Megan,Buehler,406 ANNE DR,Berea,OH,44017,406 ANNE DR,Berea,OH,44017,estate contact (owner deceased),BUEHLER  NANCY L.,Cuyahoga,36327107,Foreclosure + Probate,Warm,78,2006,ff3e96e0c8bb
 John William,Such,426 E JEFFREY PL,Columbus,OH,43214,426 E JEFFREY PL,Columbus,OH,43214,estate contact (owner deceased),SUCH ANNE,Franklin,010085237,Probate + Tax delinquent,Warm,78,2005,55c49bee0d32
-David Alan,Shelley,6709 GUTHRIE AVE,Cleveland,OH,44102,6709 GUTHRIE AVE,Cleveland,OH,44102,estate contact (owner deceased),SHELLEY GREGORY,Cuyahoga,00609104,Probate + Foreclosure,Warm,78,1985,d454ede80dd6
+David Alan,Shelley,6709 GUTHRIE AVE,Cleveland,OH,44102,6709 GUTHRIE AVE,Cleveland,OH,44102,estate contact (owner deceased),SHELLEY GREGORY,Cuyahoga,00609104,Foreclosure + Probate,Warm,78,1985,d454ede80dd6
 Juanita,Swaggerty,PO BOX 9202,Coppell,TX,75019,931 WEDGEWOOD DR,Columbus,OH,43228,owner,SWAGGERTY JUANITA,Franklin,010134543,Tax delinquent + Code violation,Warm,78,2004,41d6ffb8a502
 Tia,Blankenship,1300 BROWN RD,COLUMBUS,OH,43223,358 S GLENWOOD AVE,Columbus,OH,43223,owner,BLANKENSHIP TIA,Franklin,010064988,Foreclosure + Tax delinquent,Warm,76,2004,d159578eb644
 Joseph @ 4,Smith,6324 ELWYNNE DR,CINCINNATI,OH,45236,3044 CINNAMON ST,Cincinnati,OH,45208,owner,SMITH JOSEPH @ 4,Hamilton,530004020100,Tax delinquent + Code violation + Eviction,Hot,75,2023,b624b7f8a84b
-"Kenneth Michael,",Morley,6070 BARBARA LN,Brook Park,OH,44142,6070 BARBARA LN,Brook Park,OH,44142,estate contact (owner deceased),FEE  CORY LAINE,Cuyahoga,34322175,Probate + Foreclosure,Warm,74,2015,2b74b5d994fc
+"Kenneth Michael,",Morley,6070 BARBARA LN,Brook Park,OH,44142,6070 BARBARA LN,Brook Park,OH,44142,estate contact (owner deceased),FEE  CORY LAINE,Cuyahoga,34322175,Foreclosure + Probate,Warm,74,2015,2b74b5d994fc
 Clifford,Murray,20504 HALIFAX RD,BEACHWOOD,OH,44122,11116 FOREST AVE,Cleveland,OH,44104,owner,"MURRAY, CLIFFORD & FLOYD & GODFREY, EDITH",Cuyahoga,12826093,Foreclosure + Code violation,Warm,73,2005,25b7fd7e0a81
 "Jr., John H",Young,1345 E WHITTIER ST,Columbus,OH,43206,1345 E WHITTIER ST,Columbus,OH,43206,estate contact (owner deceased),YOUNG JOHN H SR & YOUNG JOHN JR,Franklin,010080908,Probate + Tax delinquent,Warm,73,1995,753be59b6308
 Jamie C,Davis,1871 DUNNING RD,Columbus,OH,43219,1871 DUNNING RD,Columbus,OH,43219,estate contact (owner deceased),DAVIS JAMES C,Franklin,010153137,Probate + Tax delinquent,Warm,73,1985,5612b5f740e2
@@ -26,7 +26,7 @@ Paul E,Lane,12457 JACK RUN RD,Lancaster,OH,43130,862 ELLSWORTH AVE,Columbus,OH,4
 Lora E,Grubb,3636 NORTON RD,Pleasant Township,OH,43123,3636 NORTON RD,Pleasant Township,OH,43123,estate contact (owner deceased),GRUBB KEITH,Franklin,230001666,Probate + Tax delinquent,Warm,70,2022,edd4595fa272
 Linda K,Palmer,554 E WASHINGTON AVE,BARBERTON,OH,44203,554 WASHINGTON AVE,Barberton,OH,44203,owner,PALMER LINDA K,Summit,0104364,Foreclosure + Tax delinquent,Warm,70,,a53af20ee49d
 Barbara Jean,Garvin,511 BARN SWALLOW DR,SIMPSONVILLE,SC,29680,746 FERN ST,Akron,OH,44307,owner,GARVIN BARBARA JEAN,Summit,6844543,Foreclosure + Tax delinquent,Warm,70,,a3b0bc3af18c
-Rhonda,Mitchell,8906 KEMPTON AVE,Cleveland,OH,44108,8906 KEMPTON AVE,Cleveland,OH,44108,estate contact (owner deceased),MITCHELL  RHONDA,Cuyahoga,10901019,Probate + Foreclosure,Warm,70,2025,2f97b4fc24d9
+Rhonda,Mitchell,8906 KEMPTON AVE,Cleveland,OH,44108,8906 KEMPTON AVE,Cleveland,OH,44108,estate contact (owner deceased),MITCHELL  RHONDA,Cuyahoga,10901019,Foreclosure + Probate,Warm,70,2025,2f97b4fc24d9
 Michael,Mccord,2926 NORWOOD ST,Columbus,OH,43224,2926 NORWOOD ST,Columbus,OH,43224,estate contact (owner deceased),MCCORD SHAWN MICHAEL,Franklin,010080045,Probate + Tax delinquent + Eviction,Hot,69,2016,6f47b1d593cb
 "Philip H.,",Sheridan,1069 BRICE RD,Columbus,OH,43068,1069 BRICE RD,Columbus,OH,43068,estate contact (owner deceased),KASPER MATTHEW,Franklin,010135610,Probate + Tax delinquent,Warm,69,2015,805f77dd910e
 Donna,Elkins,244 BENFIELD AVE,COLUMBUS,OH,43207,198 BENFIELD AVE REAR,Columbus,OH,43207,owner,ELKINS DONNA,Franklin,010008001,Foreclosure + Tax delinquent,Warm,69,2012,075e0227610b
@@ -86,7 +86,7 @@ Nuvia Gricelda Carrillo,Perez,2007 DENUNE AVE,Columbus,OH,43211,2007 DENUNE AVE,
 Michelle R,Amtsberg,2371 HAVERHILL RD,Twinsburg,OH,44087,2371 HAVERHILL RD,Twinsburg,OH,44087,estate contact (owner deceased),STAVENGER SANDRA LEE,Summit,6401692,Probate + Tax delinquent,Warm,65,,086caaf4c004
 Wendy,Pletcher,2488 BURGANDY LN B,Columbus,OH,43232,2488 BURGANDY LN B,Columbus,OH,43232,estate contact (owner deceased),PLETCHER TERRY W,Franklin,010096103,Probate + Tax delinquent,Warm,65,2026,f4794f16bb9c
 Nelson,Hoff,2549 CROSS WAY,Akron,OH,44312,2549 CROSS WAY,Akron,OH,44312,estate contact (owner deceased),PITCOCK PHILIP B,Summit,5103996,Probate + Tax delinquent,Warm,65,,1c880c2a4cad
-Sara,Phommaseng,2593 BROWNFIELD RD,Columbus,OH,43232,2593 BROWNFIELD RD,Columbus,OH,43232,estate contact (owner deceased),PHOMMASENG KEVIN,Franklin,010144291,Probate + Foreclosure,Warm,65,2023,592a7d2e71e5
+Sara,Phommaseng,2593 BROWNFIELD RD,Columbus,OH,43232,2593 BROWNFIELD RD,Columbus,OH,43232,estate contact (owner deceased),PHOMMASENG KEVIN,Franklin,010144291,Foreclosure + Probate,Warm,65,2023,592a7d2e71e5
 Delores E,Holland,280 JENNINGS AVE,CUYAHOGA FALLS,OH,44221,280 JENNINGS AVE,Cuyahoga Fa,OH,44221,owner,HOLLAND DELORES E,Summit,0212469,Foreclosure + Tax delinquent,Warm,65,,9c0df191c9e5
 William W,Burse,293 STEVENSON AVE,Akron,OH,44312,293 STEVENSON AVE,Akron,OH,44312,estate contact (owner deceased),BURSE WAYNE A,Summit,6714470,Probate + Tax delinquent,Warm,65,,29b443b37f3c
 Frank,Montoya,3927 INVERNESS COURT,DUBLIN,OH,43016,3927 INVERNESS CT,Dublin,OH,43016,owner,MONTOYA FRANK,Franklin,273009039,Foreclosure + Tax delinquent,Warm,65,2024,f79358735698
