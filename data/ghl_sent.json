@@ -13,6 +13,13 @@
 "foreclosure"
 ]
 },
+"015407c9f6bd": {
+"ghl_id": "uws2K4KnmNj53y3V1xhW",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "03750c824c53": [
 "code_violation",
 "foreclosure"
@@ -79,6 +86,20 @@
 "tax_delinquent"
 ]
 },
+"093018283941": {
+"ghl_id": "tafrvZubkl11SeiGULe1",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"097a3d745dba": {
+"ghl_id": "khcKYDoy1gpBdeUUqVLH",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "09a953230d17": {
 "ghl_id": "bMR5aV4io3uj0EbmFCv8",
 "types": [
@@ -97,6 +118,13 @@
 "ghl_id": "u9HoSwtSTy184P1zupnb",
 "types": [
 "probate",
+"tax_delinquent"
+]
+},
+"0b3ed9247d4d": {
+"ghl_id": "WiYJk9hmpoiVSHGtDquA",
+"types": [
+"code_violation",
 "tax_delinquent"
 ]
 },
@@ -331,6 +359,20 @@
 "foreclosure"
 ]
 },
+"1df0b6232ec9": {
+"ghl_id": "yRmEERFIhs5jgIZwzxQu",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"1f0e0a22c086": {
+"ghl_id": "j567sHvDWrt33E0sTNSA",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "1f52504b7146": {
 "ghl_id": "z4T1jWkPeUsQPvEA7OlK",
 "types": [
@@ -352,6 +394,13 @@
 "tax_delinquent"
 ]
 },
+"2250b59f6fbc": {
+"ghl_id": "z2ya10e9j53Tnq7Oj3TV",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "233fe5da6d39": [
 "code_violation",
 "tax_delinquent"
@@ -360,6 +409,13 @@
 "ghl_id": "3eByFqjxUMLXNN5lcAg0",
 "types": [
 "probate",
+"tax_delinquent"
+]
+},
+"259e90b3fbcf": {
+"ghl_id": "2bRKcqRdm2ZzJxrpbP1w",
+"types": [
+"code_violation",
 "tax_delinquent"
 ]
 },
@@ -390,6 +446,13 @@
 "tax_delinquent"
 ]
 },
+"29926bb1b24c": {
+"ghl_id": "b5GxtbzoNbvEpXcGzVH1",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "29b443b37f3c": {
 "ghl_id": "ec1PluyelRp0Av2w1y52",
 "types": [
@@ -415,11 +478,25 @@
 "foreclosure",
 "probate"
 ],
+"2ce9e7be33f6": {
+"ghl_id": "dAi8hXKzcc7wf7Ir9Rjl",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "2eecf2087aa8": {
 "ghl_id": "fG7EmDmjCCNPV16POM9x",
 "types": [
 "code_violation",
 "foreclosure"
+]
+},
+"2f0f89827d92": {
+"ghl_id": "QP0pEANSnl7wyazmivyL",
+"types": [
+"code_violation",
+"tax_delinquent"
 ]
 },
 "2f5ad4d7275c": {
@@ -437,6 +514,20 @@
 "probate",
 "tax_delinquent"
 ],
+"30fc5fb67103": {
+"ghl_id": "pdvhvNyWQuy5m7T87L6W",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"311432a1ad5d": {
+"ghl_id": "IK1lS4dtGwOOfgzDIykz",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "3121aa1a0692": [
 "code_violation",
 "eviction",
@@ -467,6 +558,20 @@
 "probate",
 "tax_delinquent"
 ],
+"3414bc6cb465": {
+"ghl_id": "Atp3L7Jiua1J1lrJBFjQ",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"3422ee2b439b": {
+"ghl_id": "R4rPRZ71pVhk7VdybOR9",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "34d66550ac1b": [
 "foreclosure",
 "probate"
@@ -512,6 +617,20 @@
 "tax_delinquent"
 ]
 },
+"38fe0e0dbbf2": {
+"ghl_id": "T9WIV6VyaM5ylLHIO8qm",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"3932bc7e866d": {
+"ghl_id": "wVl3AG627pugpu4eW7eg",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "398bb62246f2": {
 "ghl_id": "mtnHQfLGEGqsu85oNLCs",
 "types": [
@@ -548,6 +667,13 @@
 "tax_delinquent"
 ]
 },
+"3a9ea14cdffb": {
+"ghl_id": "hmNkrZZfMd09XhcCixzS",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "3b1877e4aead": {
 "ghl_id": "D1WKVZytZanH4wiIKeiU",
 "types": [
@@ -560,8 +686,22 @@
 "eviction",
 "tax_delinquent"
 ],
+"3d769aed64e7": {
+"ghl_id": "SiD84dT3W9l7yIfOFL5s",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "3da9041ffc5a": {
 "ghl_id": "vFUT0ldjytAyvs2gUdw6",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"3dda33da08c1": {
+"ghl_id": "dkHaNXht2DBcQTjZ4cL0",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -594,6 +734,13 @@
 },
 "3fec3cbd13da": {
 "ghl_id": "fzTHm2bjKp9BCATlsfvz",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"408bbb19df0e": {
+"ghl_id": "MVVEmxR2SkwkPiP1qvX8",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -638,6 +785,13 @@
 "tax_delinquent"
 ]
 },
+"42fdd27ca177": {
+"ghl_id": "lZylw2qy6JVDjm5TIPKT",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "434f47d69f97": {
 "ghl_id": "uj7h2xRgygFfZT2Bcg7v",
 "types": [
@@ -666,10 +820,24 @@
 "foreclosure"
 ]
 },
+"449e76a034c5": {
+"ghl_id": "9fjPAYuypr0FLNs4TAof",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "45553292bbdc": [
 "code_violation",
 "tax_delinquent"
 ],
+"45b3d423a9ce": {
+"ghl_id": "y2HGo0kmYu4sR5MlmQGa",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "46e01498bfc2": {
 "ghl_id": "1igtOHmBkUlhfxRobET0",
 "types": [
@@ -706,6 +874,13 @@
 "code_violation",
 "tax_delinquent"
 ],
+"4a65f8dce65f": {
+"ghl_id": "sWTq9PbE1l2GIwZFWxJs",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "4b251de6802b": {
 "ghl_id": "ibWBjshyV2HbHcmogtjJ",
 "types": [
@@ -727,6 +902,13 @@
 "foreclosure"
 ]
 },
+"4d08371545ff": {
+"ghl_id": "alRN5KpiBJTHBJaO4bCv",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "4d25d7d544fc": {
 "ghl_id": "i5tuNvKEWTZwaSrnIpFl",
 "types": [
@@ -736,6 +918,13 @@
 },
 "4e24f9f14bdc": {
 "ghl_id": "Ki5nDOrTt44tfdONnGe4",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"4e9b1fcff4dd": {
+"ghl_id": "DaFx7Fp9UbLyUxIXu6N6",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -791,8 +980,22 @@
 "tax_delinquent"
 ]
 },
+"52608d50ced4": {
+"ghl_id": "j15zNLeNSER5SxtyXfI9",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "52f44c6f849f": {
 "ghl_id": "JDxVYVbm7hgutxfACIan",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"53324ee7261e": {
+"ghl_id": "NAQcPK7E3aZCS3Cc6oK7",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -802,6 +1005,13 @@
 "code_violation",
 "tax_delinquent"
 ],
+"5436db343632": {
+"ghl_id": "ubtVRXStahbQmgt74WfD",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "5463510db3a2": {
 "ghl_id": "lSjSstazvf3fsd70ajaM",
 "types": [
@@ -827,6 +1037,13 @@
 "ghl_id": "s3eEc7CmSg0cnMav4uZk",
 "types": [
 "foreclosure",
+"tax_delinquent"
+]
+},
+"559faa283959": {
+"ghl_id": "6mwA0PdWWXDQ10nKVEda",
+"types": [
+"code_violation",
 "tax_delinquent"
 ]
 },
@@ -893,6 +1110,13 @@
 "tax_delinquent"
 ]
 },
+"5b477562c6e2": {
+"ghl_id": "Wtb3H4JVrjdHx4JqENvL",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "5bec1bd48998": {
 "ghl_id": "28oBx9kMiTDMRieHTDLJ",
 "types": [
@@ -936,6 +1160,20 @@
 "tax_delinquent"
 ]
 },
+"5f49b78d0a0b": {
+"ghl_id": "IphciPCL7R1yDGpvpIsv",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"5ffe93e35d28": {
+"ghl_id": "68Ctq9JENjv1cdDQHqte",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "6004cc0c82d7": {
 "ghl_id": "NBVpdBO2HWjT3hVag3q8",
 "types": [
@@ -966,6 +1204,13 @@
 "types": [
 "code_violation",
 "foreclosure"
+]
+},
+"61b83002b69a": {
+"ghl_id": "wHr46xuUR9ryrK6o8yjp",
+"types": [
+"code_violation",
+"tax_delinquent"
 ]
 },
 "61c7fdede7c7": {
@@ -1053,6 +1298,13 @@
 "tax_delinquent"
 ]
 },
+"6addb11ee8f8": {
+"ghl_id": "gpTMhznxDn9d2VmsuG2n",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "6b3479cbefe0": {
 "ghl_id": "rz0IRmkkMkgYQboKCR8z",
 "types": [
@@ -1062,6 +1314,13 @@
 },
 "6bb65ae2bac6": {
 "ghl_id": "fXsbSBIryf31vwR2o2uV",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"6c54be71ab54": {
+"ghl_id": "1ETUjNxQ9Iy4JimDcs1c",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -1105,6 +1364,13 @@
 "foreclosure",
 "tax_delinquent"
 ],
+"707cb326718a": {
+"ghl_id": "RDit6iPbbJjHeen7Kg3G",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "70bad68fe4fc": {
 "ghl_id": "t1KMuW1RtA45lXXO4vxt",
 "types": [
@@ -1336,6 +1602,13 @@
 "tax_delinquent"
 ]
 },
+"86f643cb9920": {
+"ghl_id": "FGtvBzGhp3aSnMnfiTnB",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "8706213433eb": {
 "ghl_id": "7vfUTDpgrwutQsmt5GSz",
 "types": [
@@ -1384,8 +1657,22 @@
 "eviction"
 ]
 },
+"8a716a023f64": {
+"ghl_id": "QaLc4ydvZebF6XqXZoa7",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "8c7cc0154101": {
 "ghl_id": "teof2z4dyHutMy2KSA5M",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"8cc39a4a908b": {
+"ghl_id": "qWE8cyPA6K11bqVUbErf",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -1469,6 +1756,13 @@
 "eviction"
 ]
 },
+"947a0e66e158": {
+"ghl_id": "dWbEW2BHWnjXW5XSGa1j",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "948d38fc75f6": {
 "ghl_id": "uokzTJn9CarBHf1ZM762",
 "types": [
@@ -1478,6 +1772,13 @@
 },
 "949d41c9ac9d": {
 "ghl_id": "nZL2ww5u4Hea2nHYeDXk",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"94b7ccb98fd1": {
+"ghl_id": "rLLFDuKxQXDV82nHm9Se",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -1499,6 +1800,13 @@
 },
 "96d83e1122a7": {
 "ghl_id": "WaJmhHbY5IrgYxDnCP8u",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"970a3de1475b": {
+"ghl_id": "lJiCKyWv4TlyAawN6AWT",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -1679,6 +1987,13 @@
 "foreclosure",
 "tax_delinquent"
 ],
+"a560008b06c3": {
+"ghl_id": "VremoVCJfWudYrTNotVE",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "a5782ddaa7ef": {
 "ghl_id": "hkeRSVpWJQCZU0yqR0TQ",
 "types": [
@@ -1715,6 +2030,13 @@
 "ghl_id": "9aET2VZb7YAqsh5H6cfe",
 "types": [
 "probate",
+"tax_delinquent"
+]
+},
+"a8414534f32e": {
+"ghl_id": "iEZeUHZp8m9z7UCoNJIO",
+"types": [
+"code_violation",
 "tax_delinquent"
 ]
 },
@@ -1797,6 +2119,13 @@
 "probate",
 "tax_delinquent"
 ],
+"b005b771ad8a": {
+"ghl_id": "ng7GeS6O5QCIhcDd040T",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "b0539b18be24": {
 "ghl_id": "At03yuBSVmEn16ttFJye",
 "types": [
@@ -1825,6 +2154,13 @@
 "tax_delinquent"
 ]
 },
+"b1a05e405d6d": {
+"ghl_id": "CKqIsRDTLEcKBNVMP8lC",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "b1ad21b70b54": {
 "ghl_id": "gJdrg4CEvOV8oFINRfSo",
 "types": [
@@ -1841,6 +2177,13 @@
 },
 "b30e23ff02ac": {
 "ghl_id": "0yq2TtbMx301JgnG88Cm",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"b33cfaf51e33": {
+"ghl_id": "ZcQHDgC2JLlqLBrKKhP4",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -1969,6 +2312,13 @@
 "tax_delinquent"
 ]
 },
+"c47364f59f13": {
+"ghl_id": "ypHOJoreOJxhhi7hBKj1",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "c473ccf720a1": {
 "ghl_id": "xHAyIau8VEV5GWRzGT5J",
 "types": [
@@ -2036,6 +2386,13 @@
 "tax_delinquent"
 ]
 },
+"c90102ef6f00": {
+"ghl_id": "rfSW1aK0kKjXjJxi1RXG",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "c9086eb49eee": [
 "code_violation",
 "probate"
@@ -2065,8 +2422,29 @@
 "tax_delinquent"
 ]
 },
+"cc49828f66e5": {
+"ghl_id": "nTVvJMTX7lCf2c8loO4R",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "cd19d8e2afea": {
 "ghl_id": "JB6KMJPV4KnC95oV1Qna",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"cd4776d679e5": {
+"ghl_id": "TQYFCSZtjltTSBTrp8pO",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"cda7e9171a41": {
+"ghl_id": "WpoyK29lXkbHcDi0bIt6",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -2084,6 +2462,13 @@
 "types": [
 "code_violation",
 "eviction",
+"tax_delinquent"
+]
+},
+"cdf4a24ee505": {
+"ghl_id": "lSCbMsCjKov8InN4Djre",
+"types": [
+"code_violation",
 "tax_delinquent"
 ]
 },
@@ -2212,6 +2597,13 @@
 "foreclosure"
 ]
 },
+"d40bc0ed9334": {
+"ghl_id": "wniVjFnbPkDd4XyUrk8n",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "d454ede80dd6": [
 "foreclosure",
 "probate"
@@ -2233,6 +2625,13 @@
 "eviction",
 "tax_delinquent"
 ],
+"d60cfa38dc9e": {
+"ghl_id": "jKOh21u7mSaZDnR480mC",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "d65c4a201801": [
 "code_violation",
 "foreclosure"
@@ -2387,6 +2786,13 @@
 "foreclosure"
 ]
 },
+"e277640bb365": {
+"ghl_id": "8KhcWKB31YP1EmDUbdhh",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "e35a8ee337a0": {
 "ghl_id": "q93uTz1DJopRK96mftDZ",
 "types": [
@@ -2483,6 +2889,13 @@
 "tax_delinquent"
 ]
 },
+"eba38a39953f": {
+"ghl_id": "DZrEG5TKxu6UpDdb1LPH",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "ebd2a92f2a08": {
 "ghl_id": "04hFo6MfPdpD1Aor6fHs",
 "types": [
@@ -2501,6 +2914,13 @@
 "probate",
 "tax_delinquent"
 ],
+"ee03684a4cba": {
+"ghl_id": "G2295xZrKlSt1zIs6U12",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "eef4073f3da3": [
 "code_violation",
 "probate",
@@ -2552,6 +2972,13 @@
 "tax_delinquent"
 ]
 },
+"f5f8fe674bc7": {
+"ghl_id": "uhDyyQ7yDm0T1Lfo2V5x",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
 "f6218c16b7e3": [
 "code_violation",
 "tax_delinquent"
@@ -2563,6 +2990,13 @@
 ],
 "f6c21695dcb3": {
 "ghl_id": "EdKNUQp0xuOVl7Nv6iaf",
+"types": [
+"code_violation",
+"tax_delinquent"
+]
+},
+"f6ed31c54fec": {
+"ghl_id": "2t5XVOhmSVyhSnkclgXx",
 "types": [
 "code_violation",
 "tax_delinquent"
@@ -2589,6 +3023,13 @@
 "ghl_id": "keaWnDCuC1BNp6WA1R6S",
 "types": [
 "foreclosure",
+"tax_delinquent"
+]
+},
+"f95ad33eca84": {
+"ghl_id": "dPMmnW2OqPyr4Qsz4q82",
+"types": [
+"code_violation",
 "tax_delinquent"
 ]
 },
