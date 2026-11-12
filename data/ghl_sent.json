@@ -1,0 +1,427 @@
+{
+"03750c824c53": [
+"code_violation",
+"foreclosure"
+],
+"04d05d16cf5c": [
+"probate",
+"tax_delinquent"
+],
+"04edd5a459a2": [
+"code_violation",
+"tax_delinquent"
+],
+"05d216e873eb": [
+"probate",
+"tax_delinquent"
+],
+"075e0227610b": [
+"foreclosure",
+"tax_delinquent"
+],
+"086819a5b897": [
+"code_violation",
+"tax_delinquent"
+],
+"0bde62d753a2": [
+"code_violation",
+"foreclosure"
+],
+"0be60b3445e6": [
+"probate",
+"tax_delinquent"
+],
+"0ee3e98e26c8": [
+"probate",
+"tax_delinquent"
+],
+"1038ae708df4": [
+"probate",
+"tax_delinquent"
+],
+"1441f6b6d712": [
+"code_violation",
+"foreclosure"
+],
+"17316e5fddb7": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"18234ae2cac1": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"1a2c55c391fd": [
+"code_violation",
+"tax_delinquent"
+],
+"233fe5da6d39": [
+"code_violation",
+"tax_delinquent"
+],
+"25b7fd7e0a81": [
+"code_violation",
+"foreclosure"
+],
+"26c0ac6dac22": [
+"code_violation",
+"tax_delinquent"
+],
+"282fcc6d5e3c": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"2b74b5d994fc": [
+"foreclosure",
+"probate"
+],
+"2f97b4fc24d9": [
+"foreclosure",
+"probate"
+],
+"3038c7868ee8": [
+"probate",
+"tax_delinquent"
+],
+"3121aa1a0692": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"3144fa1382f7": [
+"probate",
+"tax_delinquent"
+],
+"3164a73f4c0e": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"3321623e7d01": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"333be5ccf561": [
+"probate",
+"tax_delinquent"
+],
+"34d66550ac1b": [
+"foreclosure",
+"probate"
+],
+"34f3bcf0042f": [
+"code_violation",
+"tax_delinquent"
+],
+"35e301235b8c": [
+"foreclosure",
+"tax_delinquent"
+],
+"377a3892b034": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"3b9def281ddd": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"3f124f3e7f2b": [
+"probate",
+"tax_delinquent"
+],
+"41d6ffb8a502": [
+"code_violation",
+"tax_delinquent"
+],
+"45553292bbdc": [
+"code_violation",
+"tax_delinquent"
+],
+"490009af667b": [
+"probate",
+"tax_delinquent"
+],
+"49c84e359b61": [
+"code_violation",
+"tax_delinquent"
+],
+"4f524c530efa": [
+"code_violation",
+"probate"
+],
+"51549902fac6": [
+"probate",
+"tax_delinquent"
+],
+"54252dc1bca1": [
+"code_violation",
+"tax_delinquent"
+],
+"55c49bee0d32": [
+"probate",
+"tax_delinquent"
+],
+"5612b5f740e2": [
+"probate",
+"tax_delinquent"
+],
+"57e142b77887": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"58db76a50355": [
+"code_violation",
+"tax_delinquent"
+],
+"58f6aba13d2e": [
+"foreclosure",
+"tax_delinquent"
+],
+"5cfb9c9f5b18": [
+"probate",
+"tax_delinquent"
+],
+"5e189ebe1fa8": [
+"code_violation",
+"tax_delinquent"
+],
+"60c2e4553d5d": [
+"probate",
+"tax_delinquent"
+],
+"63eac98588b1": [
+"code_violation",
+"tax_delinquent"
+],
+"64262077be6e": [
+"code_violation",
+"foreclosure"
+],
+"642af6e75909": [
+"code_violation",
+"tax_delinquent"
+],
+"64998c073e69": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"68cd468673f3": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"6f47b1d593cb": [
+"eviction",
+"probate",
+"tax_delinquent"
+],
+"7064f965a749": [
+"foreclosure",
+"tax_delinquent"
+],
+"753be59b6308": [
+"probate",
+"tax_delinquent"
+],
+"7639f85cec91": [
+"code_violation",
+"tax_delinquent"
+],
+"7e081a696a88": [
+"code_violation",
+"tax_delinquent"
+],
+"805f77dd910e": [
+"probate",
+"tax_delinquent"
+],
+"850898ad4de2": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"88b536584871": [
+"code_violation",
+"foreclosure",
+"tax_delinquent"
+],
+"8d722a794749": [
+"probate",
+"tax_delinquent"
+],
+"9031e5f0d4d0": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"9235678105a1": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"9981de0a71ec": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"9af05678dbb9": [
+"code_violation",
+"tax_delinquent"
+],
+"9e0092cd73c0": [
+"code_violation",
+"tax_delinquent"
+],
+"a3b0bc3af18c": [
+"foreclosure",
+"tax_delinquent"
+],
+"a53af20ee49d": [
+"foreclosure",
+"tax_delinquent"
+],
+"a7836967469a": [
+"probate",
+"tax_delinquent"
+],
+"af36a45cb570": [
+"code_violation",
+"tax_delinquent"
+],
+"afe3bb4583d5": [
+"probate",
+"tax_delinquent"
+],
+"b624b7f8a84b": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"b6834c473b47": [
+"probate",
+"tax_delinquent"
+],
+"b7c611822a44": [
+"code_violation",
+"tax_delinquent"
+],
+"ba79262196e9": [
+"code_violation",
+"probate",
+"tax_delinquent"
+],
+"c566c925e504": [
+"probate",
+"tax_delinquent"
+],
+"c9086eb49eee": [
+"code_violation",
+"probate"
+],
+"cae5358bc363": [
+"code_violation",
+"tax_delinquent"
+],
+"ce4156775a21": [
+"code_violation",
+"tax_delinquent"
+],
+"ce5ce4760290": [
+"foreclosure",
+"tax_delinquent"
+],
+"cf29917bd6f8": [
+"code_violation",
+"tax_delinquent"
+],
+"d0cd703ce507": [
+"code_violation",
+"tax_delinquent"
+],
+"d159578eb644": [
+"foreclosure",
+"tax_delinquent"
+],
+"d454ede80dd6": [
+"foreclosure",
+"probate"
+],
+"d45d933b57a4": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"d6069523eae6": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"d65c4a201801": [
+"code_violation",
+"foreclosure"
+],
+"dc4c51907c11": [
+"probate",
+"tax_delinquent"
+],
+"e15af30e59e4": [
+"probate",
+"tax_delinquent"
+],
+"e5843b9893b1": [
+"code_violation",
+"tax_delinquent"
+],
+"e5f535b15b73": [
+"code_violation",
+"foreclosure"
+],
+"ea36b1322bad": [
+"foreclosure",
+"tax_delinquent"
+],
+"edd4595fa272": [
+"probate",
+"tax_delinquent"
+],
+"eef4073f3da3": [
+"code_violation",
+"probate",
+"tax_delinquent"
+],
+"ef61d765663d": [
+"probate",
+"tax_delinquent"
+],
+"f6218c16b7e3": [
+"code_violation",
+"tax_delinquent"
+],
+"f69b0d978ece": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"f6fcc46dd901": [
+"code_violation",
+"eviction",
+"tax_delinquent"
+],
+"f71bd41bc661": [
+"code_violation",
+"probate",
+"tax_delinquent"
+],
+"ff3e96e0c8bb": [
+"foreclosure",
+"probate"
+]
+}
