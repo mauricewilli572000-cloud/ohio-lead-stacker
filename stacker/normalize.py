@@ -94,6 +94,10 @@ def normalize_parcel(raw, county):
     """Parcel ID -> digits only, with county-specific fixes. None if unusable."""
     if not raw:
         return None
+    if county == "lucas":
+        # Auditor parcel IDs are 7 digits ('0100044'); some layers drop the leading zero.
+        d = re.sub(r"\D", "", str(raw)).zfill(7)
+        return d if len(d) == 7 and set(d) != {"0"} else None
     if county == "montgomery":
         # 'R72 06602 0033': the letter is part of the ID, keep it.
         d = re.sub(r"[^A-Z0-9]", "", str(raw).upper())

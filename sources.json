@@ -48,6 +48,15 @@
    "adapter": "cleveland_code"
   },
   {
+   "id": "toledo-code",
+   "label": "Toledo code enforcement",
+   "lead_type": "code_violation",
+   "county": "lucas",
+   "repo": "toledo-code-enforcement",
+   "path": "docs/toledo_code_enforcement.json",
+   "adapter": "cleveland_code"
+  },
+  {
    "id": "cincinnati-code",
    "label": "Cincinnati code enforcement",
    "lead_type": "code_violation",
@@ -153,6 +162,15 @@
    "county": "montgomery",
    "repo": "montgomery-tax-delinquent-leads",
    "path": "docs/montgomery_tax_delinquent.json",
+   "adapter": "tax_delinquent"
+  },
+  {
+   "id": "lucas-tax",
+   "label": "Lucas tax delinquent",
+   "lead_type": "tax_delinquent",
+   "county": "lucas",
+   "repo": "lucas-tax-delinquent-leads",
+   "path": "docs/lucas_tax_delinquent.json",
    "adapter": "tax_delinquent"
   },
   {
