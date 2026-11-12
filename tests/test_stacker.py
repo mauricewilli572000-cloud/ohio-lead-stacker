@@ -156,6 +156,7 @@ def test_ghl_push_sends_once_and_on_upgrade(tmp_path, monkeypatch):
     from stacker import outreach
     monkeypatch.setenv("GHL_WEBHOOK_URL", "https://example.invalid/hook")
     monkeypatch.setattr(outreach, "GHL_DELAY", 0)
+    monkeypatch.setattr(outreach, "GHL_BACKOFF", 0)
     sent = []
     post = lambda url, p: sent.append(p["stackId"]) or 200
     s1 = {"id": "a", "tier": "Hot", "score": 50, "lead_types": ["probate", "eviction"], "county": "franklin",
@@ -166,3 +167,21 @@ def test_ghl_push_sends_once_and_on_upgrade(tmp_path, monkeypatch):
     assert outreach.push_ghl([s1, s2], path, {}, log=lambda *_: None, post=post) == 0
     s1["lead_types"] = ["probate", "eviction", "tax_delinquent"]
     assert outreach.push_ghl([s1], path, {}, log=lambda *_: None, post=post) == 1 and sent == ["a", "a"]
+
+
+def test_ghl_push_retries_after_rate_limit(tmp_path, monkeypatch):
+    from stacker import outreach
+    monkeypatch.setenv("GHL_WEBHOOK_URL", "https://example.invalid/hook")
+    monkeypatch.setattr(outreach, "GHL_DELAY", 0)
+    monkeypatch.setattr(outreach, "GHL_BACKOFF", 0)
+    calls = []
+    def post(url, p):
+        calls.append(p["stackId"])
+        if len(calls) == 2:
+            raise RuntimeError("HTTP Error 422")
+        return 200
+    stacks = [{"id": i, "tier": "Hot", "score": 90, "lead_types": ["probate"], "county": "franklin",
+               "address": "1 MAIN ST", "owner": "DOE JANE", "contact_name": "", "mailing": "", "signals": []}
+              for i in ("a", "b", "c")]
+    assert outreach.push_ghl(stacks, str(tmp_path / "s.json"), {}, log=lambda *_: None, post=post) == 3
+    assert calls == ["a", "b", "b", "c"]

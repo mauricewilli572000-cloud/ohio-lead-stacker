@@ -24,7 +24,8 @@ import urllib.request
 
 GHL_MIN_SCORE = 60
 GHL_MAX_PER_RUN = 500
-GHL_DELAY = 0.4            # seconds between webhook calls
+GHL_DELAY = 0.75           # seconds between webhook calls (GHL rejects with 422 after ~100 quick calls)
+GHL_BACKOFF = 65           # on a reject, wait this long once and retry
 
 ENTITY_WORDS = {"LLC", "L.L.C.", "INC", "INC.", "CORP", "CORPORATION", "CO", "COMPANY", "LTD", "LP", "LLP",
                 "TRUST", "TRUSTEE", "TRUSTEES", "TR", "TRS", "BANK", "PROPERTIES", "PROPERTY", "HOLDINGS",
@@ -173,20 +174,29 @@ def push_ghl(stacks: list[dict], sent_path: str, labels: dict, log=print, post=_
             if (s.get("tier") == "Hot" or s["score"] >= GHL_MIN_SCORE)
             and sorted(s["lead_types"]) != sent.get(s["id"])]
     todo.sort(key=lambda s: -s["score"])
-    ok = failed = 0
+    ok = failed = in_a_row = 0
     for s in todo[:GHL_MAX_PER_RUN]:
-        try:
-            if 200 <= post(url, ghl_payload(s, labels)) < 300:
-                sent[s["id"]] = sorted(s["lead_types"])
-                ok += 1
-            else:
-                failed += 1
-        except Exception as e:  # noqa: BLE001
+        payload = ghl_payload(s, labels)
+        for attempt in range(2):
+            try:
+                status = post(url, payload)
+            except Exception as e:  # noqa: BLE001 - HTTPError 422/429 when GHL is rate limiting
+                status, err = 0, e
+            if 200 <= status < 300:
+                break
+            if attempt == 0:
+                time.sleep(GHL_BACKOFF)       # GHL rate limit: wait it out, then retry once
+        if 200 <= status < 300:
+            sent[s["id"]] = sorted(s["lead_types"])
+            ok += 1
+            in_a_row = 0
+        else:
             failed += 1
+            in_a_row += 1
             if failed <= 3:
-                log(f"GHL push: {s['address']} failed ({e})")
-            if failed >= 10 and ok == 0:
-                log("GHL push: stopping after 10 failures in a row - check the webhook URL")
+                log(f"GHL push: {s['address']} failed ({err if status == 0 else status})")
+            if in_a_row >= 5:
+                log("GHL push: 5 rejects in a row even after waiting - stopping; the rest go next run")
                 break
         time.sleep(GHL_DELAY)
     os.makedirs(os.path.dirname(sent_path), exist_ok=True)
